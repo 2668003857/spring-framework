@@ -1,0 +1,47 @@
+description = "Spring Source Debug Playground"
+
+apply plugin: 'application'
+
+application {
+	mainClass = 'com.jiuhong.Main'
+}
+
+dependencies {
+	implementation(project(":spring-beans"))
+	implementation(project(":spring-context"))
+	implementation(project(":spring-core"))
+}
+
+def debugJvmArgs = [
+		'--add-opens=java.base/java.lang=ALL-UNNAMED',
+		'--add-opens=java.base/java.util=ALL-UNNAMED'
+]
+
+// Learning sandbox: skip Spring Framework quality gates that block local experiments.
+tasks.withType(org.gradle.api.plugins.quality.Checkstyle).configureEach {
+	enabled = false
+}
+
+tasks.withType(JavaCompile).configureEach {
+	if (name == 'compileJava') {
+		options.compilerArgs.removeAll(['-Werror'])
+	}
+}
+
+tasks.named('run') {
+	jvmArgs = debugJvmArgs
+}
+
+tasks.register('runStep3', JavaExec) {
+	group = 'application'
+	description = 'Run Step3_BPP_Proxy_Demo'
+	classpath = sourceSets.main.runtimeClasspath
+	mainClass = 'com.jiuhong.Step3_BPP_Proxy_Demo'
+	jvmArgs = debugJvmArgs
+}
+
+normalization {
+	runtimeClasspath {
+		ignore "META-INF/MANIFEST.MF"
+	}
+}

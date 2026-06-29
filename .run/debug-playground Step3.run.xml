@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="debug-playground Step3" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.jiuhong.Step3_BPP_Proxy_Demo" />
+    <module name="spring.debug-playground.main" />
+    <option name="VM_PARAMETERS" value="--add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

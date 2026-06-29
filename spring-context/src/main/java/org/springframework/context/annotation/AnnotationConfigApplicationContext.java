@@ -63,6 +63,11 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	/**
 	 * Create a new AnnotationConfigApplicationContext that needs to be populated
 	 * through {@link #register} calls and then manually {@linkplain #refresh refreshed}.
+	 * 创建一个新的 AnnotationConfigApplicationContext，需要调用 {@link #register} 方法填充，
+	 * 然后手动调用 {@linkplain #refresh refresh} 进行刷新。
+	 *
+	 * 无参构造只做了初始化（创建 reader、scanner），没有 register / scan，也没有 refresh()。
+	 * 注释里的 manually refreshed 强调的是：用无参构造时，刷新要自己调用。
 	 */
 	public AnnotationConfigApplicationContext() {
 		StartupStep createAnnotatedBeanDefReader = getApplicationStartup().start("spring.context.annotated-bean-reader.create");
@@ -86,6 +91,11 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * from the given component classes and automatically refreshing the context.
 	 * @param componentClasses one or more component classes &mdash; for example,
 	 * {@link Configuration @Configuration} classes
+	 *
+	 * 创建一个新的 AnnotationConfigApplicationContext，从给定的组件类派生 bean definitions，
+	 * 并自动刷新上下文。
+	 * @param componentClasses 一个或多个组件类——例如
+	 * {@link Configuration @Configuration} 类
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
 		this();

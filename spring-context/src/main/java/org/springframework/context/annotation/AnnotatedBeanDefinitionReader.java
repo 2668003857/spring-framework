@@ -66,6 +66,11 @@ public class AnnotatedBeanDefinitionReader {
 	 * in the form of a {@code BeanDefinitionRegistry}
 	 * @see #AnnotatedBeanDefinitionReader(BeanDefinitionRegistry, Environment)
 	 * @see #setEnvironment(Environment)
+	 *
+	 * 为给定的 registry 创建一个新的 {@code AnnotatedBeanDefinitionReader}。
+	 * <p>如果 registry 实现了 {@link EnvironmentCapable}（例如是 {@code ApplicationContext}），
+	 * 则会继承 {@link Environment}；否则会创建并使用一个新的 {@link StandardEnvironment}。
+	 * @param registry 用于加载 bean 定义的 {@code BeanFactory}，形式为 {@code BeanDefinitionRegistry}
 	 */
 	public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry) {
 		this(registry, getOrCreateEnvironment(registry));
@@ -78,6 +83,12 @@ public class AnnotatedBeanDefinitionReader {
 	 * in the form of a {@code BeanDefinitionRegistry}
 	 * @param environment the {@code Environment} to use when evaluating bean definition
 	 * profiles.
+	 *
+	 * 为给定的 registry 创建一个新的 {@code AnnotatedBeanDefinitionReader}，
+	 * 并使用指定的 {@link Environment}。
+	 * @param registry 用于加载 bean 定义的 {@code BeanFactory}，形式为 {@code BeanDefinitionRegistry}
+	 * @param environment 在评估 bean 定义的 profiles 时使用的 {@code Environment}
+	 * 评估 bean 定义上的 Profile（例如 @Profile 条件是否满足）
 	 * @since 3.1
 	 */
 	public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry, Environment environment) {

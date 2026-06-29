@@ -80,6 +80,10 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 	 * Create a new {@code ClassPathBeanDefinitionScanner} for the given bean factory.
 	 * @param registry the {@code BeanFactory} to load bean definitions into, in the form
 	 * of a {@code BeanDefinitionRegistry}
+	 *
+	 * 为给定的bean工厂创建一个新的{@code ClassPathBeanDefinitionScanner}
+	 * @param registry 以 {@code BeanDefinitionRegistry} 加载bean definitions的{@code BeanFactory}
+	 *
 	 */
 	public ClassPathBeanDefinitionScanner(BeanDefinitionRegistry registry) {
 		this(registry, true);

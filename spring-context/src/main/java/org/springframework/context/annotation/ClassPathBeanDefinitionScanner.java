@@ -112,6 +112,24 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 	 * {@link org.springframework.stereotype.Controller @Controller} stereotype annotations
 	 * @see #setResourceLoader
 	 * @see #setEnvironment
+	 *
+	 * 为给定的 bean factory 创建一个新的 {@code ClassPathBeanDefinitionScanner}。
+	 * <p>如果传入的 bean factory 不仅实现了 {@code BeanDefinitionRegistry} 接口，
+	 * 还实现了 {@code ResourceLoader} 接口，则它也会作为默认的 {@code ResourceLoader} 使用。
+	 * 例如 {@link org.springframework.context.ApplicationContext} 实现类。
+	 * <p>如果传入的是普通的 {@code BeanDefinitionRegistry}，则默认的 {@code ResourceLoader}
+	 * 将是 {@link org.springframework.core.io.support.PathMatchingResourcePatternResolver}。
+	 * <p>如果传入的 bean factory 还实现了 {@link EnvironmentCapable}，则本 reader 会使用其 environment；
+	 * 否则，reader 会初始化并使用 {@link org.springframework.core.env.StandardEnvironment}。
+	 * 所有 {@code ApplicationContext} 都是这样，而普通的 {@code BeanFactory} 则不是。
+	 * @param registry 用于加载 bean 定义的 {@code BeanFactory}，形式为 {@code BeanDefinitionRegistry}
+	 * @param useDefaultFilters 是否包含下面这些构造型注解的默认过滤器
+	 * {@link org.springframework.stereotype.Component @Component}、
+	 * {@link org.springframework.stereotype.Repository @Repository}、
+	 * {@link org.springframework.stereotype.Service @Service} 和
+	 * {@link org.springframework.stereotype.Controller @Controller}
+	 * @see #setResourceLoader
+	 * @see #setEnvironment
 	 */
 	public ClassPathBeanDefinitionScanner(BeanDefinitionRegistry registry, boolean useDefaultFilters) {
 		this(registry, useDefaultFilters, getOrCreateEnvironment(registry));

@@ -1,0 +1,2622 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 16,
+  "filesSkipped": [
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/AbstractAotBeanPostProcessor.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/AotContext.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/AotException.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/BeanFactoryInitializationCodeContribution.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/CodeWarnings.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/AbstractFromTypeDescriberEntryHint.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/ConstructorHintsAttributes.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/FieldHintAttributes.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/FromTypeDescriber.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/HintPredicates.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/ReflectionHintsAttributes.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/ReflectionHintsBeanFactoryInitializationAotProcessor.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/TypeHintBeanRegistrationAotProcessor.java",
+    "spring-beans/src/main/java/org/springframework/beans/factory/aot/hint/package-info.java",
+    "spring-beans/src/test/java/org/springframework/beans/factory/aot/AbstractAotBeanPostProcessorTests.java",
+    "spring-beans/src/test/java/org/springframework/beans/factory/aot/AotContextTests.java",
+    "spring-beans/src/test/java/org/springframework/beans/factory/aot/BeanFactoryInitializationAotContributionTests.java",
+    "spring-beans/src/test/java/org/springframework/beans/factory/aot/hint/ReflectionHintsAttributesTests.java",
+    "spring-beans/src/test/java/org/springframework/beans/factory/aot/hint/TypeHintBeanRegistrationAotProcessorTests.java"
+  ],
+  "results": [
+    {
+      "path": "framework-docs/src/main/java/org/springframework/docs/core/aot/hints/importruntimehints/SpellCheckService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "loadDictionary",
+          "startLine": 31,
+          "endLine": 34,
+          "params": [
+            "locale"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpellCheckService",
+          "startLine": 27,
+          "endLine": 44,
+          "methods": [
+            "loadDictionary"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "loadDictionary",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "SpellCheckService",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadDictionary",
+          "callee": "new ClassPathResource",
+          "lineNumber": 32
+        },
+        {
+          "caller": "loadDictionary",
+          "callee": "locale.getLanguage",
+          "lineNumber": 32
+        },
+        {
+          "caller": "registerHints",
+          "callee": "hints.resources().registerPattern",
+          "lineNumber": 40
+        },
+        {
+          "caller": "registerHints",
+          "callee": "hints.resources",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "framework-docs/src/main/java/org/springframework/docs/core/aot/hints/testing/SampleReflectionRuntimeHintsTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "shouldRegisterReflectionHints",
+          "startLine": 38,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SampleReflectionRuntimeHintsTests",
+          "startLine": 35,
+          "endLine": 54,
+          "methods": [
+            "shouldRegisterReflectionHints"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "new RuntimeHints",
+          "lineNumber": 40
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "runtimeHints.reflection().registerType",
+          "lineNumber": 42
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "runtimeHints.reflection",
+          "lineNumber": 42
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "typeHint.withMethod",
+          "lineNumber": 43
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "List.of",
+          "lineNumber": 43
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "RuntimeHintsRecorder.record",
+          "lineNumber": 46
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "new SampleReflection",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "sample.performReflection",
+          "lineNumber": 48
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "assertThat(invocations).match",
+          "lineNumber": 51
+        },
+        {
+          "caller": "shouldRegisterReflectionHints",
+          "callee": "assertThat",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "framework-docs/src/main/java/org/springframework/docs/core/aot/hints/testing/SpellCheckServiceTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "shouldRegisterResourceHints",
+          "startLine": 30,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpellCheckServiceTests",
+          "startLine": 27,
+          "endLine": 48,
+          "methods": [
+            "shouldRegisterResourceHints"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SpellCheckServiceTests",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "new RuntimeHints",
+          "lineNumber": 32
+        },
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "new SpellCheckServiceRuntimeHints().registerHints",
+          "lineNumber": 33
+        },
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "new SpellCheckServiceRuntimeHints",
+          "lineNumber": 33
+        },
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "getClass().getClassLoader",
+          "lineNumber": 33
+        },
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "getClass",
+          "lineNumber": 33
+        },
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "assertThat(RuntimeHintsPredicates.resource().forResource(\"dicts/en.txt\")).accepts",
+          "lineNumber": 34
+        },
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "assertThat",
+          "lineNumber": 34
+        },
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "RuntimeHintsPredicates.resource().forResource",
+          "lineNumber": 34
+        },
+        {
+          "caller": "shouldRegisterResourceHints",
+          "callee": "RuntimeHintsPredicates.resource",
+          "lineNumber": 34
+        },
+        {
+          "caller": "registerHints",
+          "callee": "hints.resources().registerPattern",
+          "lineNumber": 44
+        },
+        {
+          "caller": "registerHints",
+          "callee": "hints.resources",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "integration-tests/src/test/java/org/springframework/aot/RuntimeHintsAgentTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 297,
+      "nonEmptyLines": 261,
+      "functions": [
+        {
+          "name": "classSetup",
+          "startLine": 60,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "shouldInstrumentReflectionMethods",
+          "startLine": 68,
+          "endLine": 76,
+          "params": [
+            "runnable",
+            "methodReference"
+          ]
+        },
+        {
+          "name": "instrumentedReflectionMethods",
+          "startLine": 78,
+          "endLine": 176,
+          "params": []
+        },
+        {
+          "name": "shouldInstrumentResourceBundleMethods",
+          "startLine": 178,
+          "endLine": 187,
+          "params": [
+            "runnable",
+            "methodReference"
+          ]
+        },
+        {
+          "name": "instrumentedResourceBundleMethods",
+          "startLine": 190,
+          "endLine": 201,
+          "params": []
+        },
+        {
+          "name": "shouldInstrumentResourcePatternMethods",
+          "startLine": 203,
+          "endLine": 212,
+          "params": [
+            "runnable",
+            "methodReference"
+          ]
+        },
+        {
+          "name": "instrumentedResourcePatternMethods",
+          "startLine": 215,
+          "endLine": 244,
+          "params": []
+        },
+        {
+          "name": "shouldInstrumentStaticMethodHandle",
+          "startLine": 246,
+          "endLine": 255,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RuntimeHintsAgentTests",
+          "startLine": 48,
+          "endLine": 297,
+          "methods": [
+            "classSetup",
+            "shouldInstrumentReflectionMethods",
+            "instrumentedReflectionMethods",
+            "shouldInstrumentResourceBundleMethods",
+            "instrumentedResourceBundleMethods",
+            "shouldInstrumentResourcePatternMethods",
+            "instrumentedResourcePatternMethods",
+            "shouldInstrumentStaticMethodHandle"
+          ],
+          "properties": [
+            "classLoader",
+            "defaultConstructor",
+            "toStringMethod",
+            "privateGreetMethod"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "classSetup",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "RuntimeHintsAgentTests",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "classSetup",
+          "callee": "String.class.getConstructor",
+          "lineNumber": 62
+        },
+        {
+          "caller": "classSetup",
+          "callee": "String.class.getMethod",
+          "lineNumber": 63
+        },
+        {
+          "caller": "classSetup",
+          "callee": "PrivateClass.class.getDeclaredMethod",
+          "lineNumber": 64
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "RecordingSession.record",
+          "lineNumber": 71
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "assertThat(session.recordedInvocations()).hasSize",
+          "lineNumber": 72
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "assertThat",
+          "lineNumber": 72
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "session.recordedInvocations",
+          "lineNumber": 72
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "session.recordedInvocations().findFirst().get",
+          "lineNumber": 73
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "session.recordedInvocations().findFirst",
+          "lineNumber": 73
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "session.recordedInvocations",
+          "lineNumber": 73
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "assertThat(invocation.getMethodReference()).isEqualTo",
+          "lineNumber": 74
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "assertThat",
+          "lineNumber": 74
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "invocation.getMethodReference",
+          "lineNumber": 74
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "assertThat(invocation.getStackFrames()).first().matches",
+          "lineNumber": 75
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "assertThat(invocation.getStackFrames()).first",
+          "lineNumber": 75
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "assertThat",
+          "lineNumber": 75
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "invocation.getStackFrames",
+          "lineNumber": 75
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "frame.getClassName().equals",
+          "lineNumber": 75
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "frame.getClassName",
+          "lineNumber": 75
+        },
+        {
+          "caller": "shouldInstrumentReflectionMethods",
+          "callee": "RuntimeHintsAgentTests.class.getName",
+          "lineNumber": 75
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Stream.of",
+          "lineNumber": 79
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 80
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Class.forName",
+          "lineNumber": 82
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 85
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 87
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 88
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getClasses",
+          "lineNumber": 88
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 88
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 89
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getConstructor",
+          "lineNumber": 91
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 94
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 96
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 97
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getConstructors",
+          "lineNumber": 97
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 97
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 98
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getDeclaredClasses",
+          "lineNumber": 98
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 98
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 99
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getDeclaredConstructor",
+          "lineNumber": 101
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 104
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 106
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 107
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getDeclaredConstructors",
+          "lineNumber": 107
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 107
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 108
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getDeclaredField",
+          "lineNumber": 110
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 113
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 115
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 116
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getDeclaredFields",
+          "lineNumber": 116
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 116
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 117
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getDeclaredMethod",
+          "lineNumber": 119
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 122
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 124
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 125
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getDeclaredMethods",
+          "lineNumber": 125
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 125
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 126
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getField",
+          "lineNumber": 128
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 132
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 133
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getFields",
+          "lineNumber": 133
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 133
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 134
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getMethod",
+          "lineNumber": 136
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 139
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 141
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 142
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "String.class.getMethods",
+          "lineNumber": 142
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 142
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 143
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "classLoader.loadClass",
+          "lineNumber": 145
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 148
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 150
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 151
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "defaultConstructor.newInstance",
+          "lineNumber": 153
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 156
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 158
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 159
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "toStringMethod.invoke",
+          "lineNumber": 161
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 164
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 166
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 167
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "privateGreetMethod.invoke",
+          "lineNumber": 169
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new PrivateClass",
+          "lineNumber": 169
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "new RuntimeException",
+          "lineNumber": 172
+        },
+        {
+          "caller": "instrumentedReflectionMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 174
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "RecordingSession.record",
+          "lineNumber": 181
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "assertThat(session.recordedInvocations(HintType.RESOURCE_BUNDLE)).hasSize",
+          "lineNumber": 182
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "assertThat",
+          "lineNumber": 182
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "session.recordedInvocations",
+          "lineNumber": 182
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "session.recordedInvocations(HintType.RESOURCE_BUNDLE).findFirst().get",
+          "lineNumber": 184
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "session.recordedInvocations(HintType.RESOURCE_BUNDLE).findFirst",
+          "lineNumber": 184
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "session.recordedInvocations",
+          "lineNumber": 184
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "assertThat(resolution.getMethodReference()).isEqualTo",
+          "lineNumber": 185
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "assertThat",
+          "lineNumber": 185
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "resolution.getMethodReference",
+          "lineNumber": 185
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "assertThat(resolution.getStackFrames()).first().matches",
+          "lineNumber": 186
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "assertThat(resolution.getStackFrames()).first",
+          "lineNumber": 186
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "assertThat",
+          "lineNumber": 186
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "resolution.getStackFrames",
+          "lineNumber": 186
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "frame.getClassName().equals",
+          "lineNumber": 186
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "frame.getClassName",
+          "lineNumber": 186
+        },
+        {
+          "caller": "shouldInstrumentResourceBundleMethods",
+          "callee": "RuntimeHintsAgentTests.class.getName",
+          "lineNumber": 186
+        },
+        {
+          "caller": "instrumentedResourceBundleMethods",
+          "callee": "Stream.of",
+          "lineNumber": 191
+        },
+        {
+          "caller": "instrumentedResourceBundleMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 192
+        },
+        {
+          "caller": "instrumentedResourceBundleMethods",
+          "callee": "ResourceBundle.getBundle",
+          "lineNumber": 194
+        },
+        {
+          "caller": "instrumentedResourceBundleMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 199
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "RecordingSession.record",
+          "lineNumber": 206
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "assertThat(session.recordedInvocations(HintType.RESOURCE_PATTERN)).hasSize",
+          "lineNumber": 207
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "assertThat",
+          "lineNumber": 207
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "session.recordedInvocations",
+          "lineNumber": 207
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "session.recordedInvocations(HintType.RESOURCE_PATTERN).findFirst().get",
+          "lineNumber": 209
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "session.recordedInvocations(HintType.RESOURCE_PATTERN).findFirst",
+          "lineNumber": 209
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "session.recordedInvocations",
+          "lineNumber": 209
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "assertThat(resolution.getMethodReference()).isEqualTo",
+          "lineNumber": 210
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "assertThat",
+          "lineNumber": 210
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "resolution.getMethodReference",
+          "lineNumber": 210
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "assertThat(resolution.getStackFrames()).first().matches",
+          "lineNumber": 211
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "assertThat(resolution.getStackFrames()).first",
+          "lineNumber": 211
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "assertThat",
+          "lineNumber": 211
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "resolution.getStackFrames",
+          "lineNumber": 211
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "frame.getClassName().equals",
+          "lineNumber": 211
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "frame.getClassName",
+          "lineNumber": 211
+        },
+        {
+          "caller": "shouldInstrumentResourcePatternMethods",
+          "callee": "RuntimeHintsAgentTests.class.getName",
+          "lineNumber": 211
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "Stream.of",
+          "lineNumber": 216
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 217
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "RuntimeHintsAgentTests.class.getResource",
+          "lineNumber": 217
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 218
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 219
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "RuntimeHintsAgentTests.class.getResourceAsStream",
+          "lineNumber": 219
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 220
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 221
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "classLoader.getResource",
+          "lineNumber": 221
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 222
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 223
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "classLoader.getResourceAsStream",
+          "lineNumber": 223
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 224
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 225
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "classLoader.getResources",
+          "lineNumber": 227
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 232
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 233
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "RuntimeHintsAgentTests.class.getModule().getResourceAsStream",
+          "lineNumber": 235
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "RuntimeHintsAgentTests.class.getModule",
+          "lineNumber": 235
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 240
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "Arguments.of",
+          "lineNumber": 241
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "classLoader.resources",
+          "lineNumber": 241
+        },
+        {
+          "caller": "instrumentedResourcePatternMethods",
+          "callee": "MethodReference.of",
+          "lineNumber": 242
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "RecordingSession.record",
+          "lineNumber": 248
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "assertThat(session.recordedInvocations(HintType.REFLECTION)).hasSize",
+          "lineNumber": 249
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "assertThat",
+          "lineNumber": 249
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "session.recordedInvocations",
+          "lineNumber": 249
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "session.recordedInvocations(HintType.REFLECTION).findFirst().get",
+          "lineNumber": 251
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "session.recordedInvocations(HintType.REFLECTION).findFirst",
+          "lineNumber": 251
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "session.recordedInvocations",
+          "lineNumber": 251
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "assertThat(resolution.getMethodReference()).isEqualTo",
+          "lineNumber": 252
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "assertThat",
+          "lineNumber": 252
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "resolution.getMethodReference",
+          "lineNumber": 252
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "MethodReference.of",
+          "lineNumber": 252
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "assertThat(resolution.getStackFrames()).first().extracting(StackWalker.StackFrame::getClassName).isEqualTo",
+          "lineNumber": 253
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "assertThat(resolution.getStackFrames()).first().extracting",
+          "lineNumber": 253
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "assertThat(resolution.getStackFrames()).first",
+          "lineNumber": 253
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "assertThat",
+          "lineNumber": 253
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "resolution.getStackFrames",
+          "lineNumber": 253
+        },
+        {
+          "caller": "shouldInstrumentStaticMethodHandle",
+          "callee": "RuntimeHintsAgentTests.class.getName",
+          "lineNumber": 254
+        },
+        {
+          "caller": "record",
+          "callee": "new RecordingSession",
+          "lineNumber": 262
+        },
+        {
+          "caller": "record",
+          "callee": "RecordedInvocationsPublisher.addListener",
+          "lineNumber": 263
+        },
+        {
+          "caller": "record",
+          "callee": "action.run",
+          "lineNumber": 265
+        },
+        {
+          "caller": "record",
+          "callee": "RecordedInvocationsPublisher.removeListener",
+          "lineNumber": 268
+        },
+        {
+          "caller": "onInvocation",
+          "callee": "this.recordedInvocations.addLast",
+          "lineNumber": 275
+        },
+        {
+          "caller": "recordedInvocations",
+          "callee": "this.recordedInvocations.stream",
+          "lineNumber": 279
+        },
+        {
+          "caller": "recordedInvocations",
+          "callee": "recordedInvocations().filter",
+          "lineNumber": 283
+        },
+        {
+          "caller": "recordedInvocations",
+          "callee": "recordedInvocations",
+          "lineNumber": 283
+        },
+        {
+          "caller": "recordedInvocations",
+          "callee": "invocation.getHintType",
+          "lineNumber": 283
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "integration-tests/src/test/java/org/springframework/aot/test/ReflectionInvocationsTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "sampleTest",
+          "startLine": 33,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "multipleCallsTest",
+          "startLine": 45,
+          "endLine": 55,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ReflectionInvocationsTests",
+          "startLine": 30,
+          "endLine": 57,
+          "methods": [
+            "sampleTest",
+            "multipleCallsTest"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sampleTest",
+          "callee": "new RuntimeHints",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sampleTest",
+          "callee": "hints.reflection().registerType",
+          "lineNumber": 36
+        },
+        {
+          "caller": "sampleTest",
+          "callee": "hints.reflection",
+          "lineNumber": 36
+        },
+        {
+          "caller": "sampleTest",
+          "callee": "RuntimeHintsRecorder.record",
+          "lineNumber": 38
+        },
+        {
+          "caller": "sampleTest",
+          "callee": "new SampleReflection",
+          "lineNumber": 39
+        },
+        {
+          "caller": "sampleTest",
+          "callee": "sample.sample",
+          "lineNumber": 40
+        },
+        {
+          "caller": "sampleTest",
+          "callee": "assertThat(invocations).match",
+          "lineNumber": 42
+        },
+        {
+          "caller": "sampleTest",
+          "callee": "assertThat",
+          "lineNumber": 42
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "new RuntimeHints",
+          "lineNumber": 47
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "hints.reflection().registerType",
+          "lineNumber": 48
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "hints.reflection",
+          "lineNumber": 48
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "hints.reflection().registerType",
+          "lineNumber": 49
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "hints.reflection",
+          "lineNumber": 49
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "RuntimeHintsRecorder.record",
+          "lineNumber": 50
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "new SampleReflection",
+          "lineNumber": 51
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "sample.multipleCalls",
+          "lineNumber": 52
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "assertThat(invocations).match",
+          "lineNumber": 54
+        },
+        {
+          "caller": "multipleCallsTest",
+          "callee": "assertThat",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-aop/src/main/java/org/springframework/aop/aspectj/annotation/AspectJBeanFactoryInitializationAotProcessor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "processAheadOfTime",
+          "startLine": 46,
+          "endLine": 53,
+          "params": [
+            "beanFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AspectJBeanFactoryInitializationAotProcessor",
+          "startLine": 41,
+          "endLine": 90,
+          "methods": [
+            "processAheadOfTime"
+          ],
+          "properties": [
+            "aspectJPresent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "processAheadOfTime",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "processAheadOfTime",
+          "callee": "AspectDelegate.processAheadOfTime",
+          "lineNumber": 50
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "new BeanFactoryAspectJAdvisorsBuilder",
+          "lineNumber": 62
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "builder.buildAspectJAdvisors",
+          "lineNumber": 63
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "advisors.isEmpty",
+          "lineNumber": 64
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "new AspectContribution",
+          "lineNumber": 64
+        },
+        {
+          "caller": "applyTo",
+          "callee": "generationContext.getRuntimeHints().reflection",
+          "lineNumber": 80
+        },
+        {
+          "caller": "applyTo",
+          "callee": "generationContext.getRuntimeHints",
+          "lineNumber": 80
+        },
+        {
+          "caller": "applyTo",
+          "callee": "advisor.getAdvice",
+          "lineNumber": 82
+        },
+        {
+          "caller": "applyTo",
+          "callee": "reflectionHints.registerMethod",
+          "lineNumber": 83
+        },
+        {
+          "caller": "applyTo",
+          "callee": "aspectJAdvice.getAspectJAdviceMethod",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-aop/src/main/java/org/springframework/aop/scope/ScopedProxyBeanRegistrationAotProcessor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 171,
+      "nonEmptyLines": 142,
+      "functions": [
+        {
+          "name": "processAheadOfTime",
+          "startLine": 56,
+          "endLine": 73,
+          "params": [
+            "registeredBean"
+          ]
+        },
+        {
+          "name": "getTargetBeanName",
+          "startLine": 75,
+          "endLine": 79,
+          "params": [
+            "beanDefinition"
+          ]
+        },
+        {
+          "name": "getTargetBeanDefinition",
+          "startLine": 81,
+          "endLine": 89,
+          "params": [
+            "beanFactory",
+            "targetBeanName"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ScopedProxyBeanRegistrationAotProcessor",
+          "startLine": 51,
+          "endLine": 171,
+          "methods": [
+            "processAheadOfTime",
+            "getTargetBeanName",
+            "getTargetBeanDefinition"
+          ],
+          "properties": [
+            "logger"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "processAheadOfTime",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "processAheadOfTime",
+          "callee": "registeredBean.getBeanClass",
+          "lineNumber": 58
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "beanClass.equals",
+          "lineNumber": 59
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "getTargetBeanName",
+          "lineNumber": 60
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "registeredBean.getMergedBeanDefinition",
+          "lineNumber": 60
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "getTargetBeanDefinition",
+          "lineNumber": 62
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "registeredBean.getBeanFactory",
+          "lineNumber": 62
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "logger.warn",
+          "lineNumber": 64
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "ScopedProxyFactoryBean.class.getSimpleName",
+          "lineNumber": 64
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "BeanRegistrationAotContribution.withCustomCodeFragments",
+          "lineNumber": 68
+        },
+        {
+          "caller": "processAheadOfTime",
+          "callee": "new ScopedProxyBeanRegistrationCodeFragments",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTargetBeanName",
+          "callee": "beanDefinition.getPropertyValues().get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getTargetBeanName",
+          "callee": "beanDefinition.getPropertyValues",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getTargetBeanDefinition",
+          "callee": "beanFactory.containsBean",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getTargetBeanDefinition",
+          "callee": "beanFactory.getMergedBeanDefinition",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getTarget",
+          "callee": "ClassName.get",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getTarget",
+          "callee": "this.targetBeanDefinition.getResolvableType().toClass",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getTarget",
+          "callee": "this.targetBeanDefinition.getResolvableType",
+          "lineNumber": 113
+        },
+        {
+          "caller": "generateNewBeanDefinitionCode",
+          "callee": "super.generateNewBeanDefinitionCode",
+          "lineNumber": 120
+        },
+        {
+          "caller": "generateNewBeanDefinitionCode",
+          "callee": "this.targetBeanDefinition.getResolvableType",
+          "lineNumber": 121
+        },
+        {
+          "caller": "generateSetBeanDefinitionPropertiesCode",
+          "callee": "new RootBeanDefinition",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generateSetBeanDefinitionPropertiesCode",
+          "callee": "processedBeanDefinition.setTargetType",
+          "lineNumber": 132
+        },
+        {
+          "caller": "generateSetBeanDefinitionPropertiesCode",
+          "callee": "this.targetBeanDefinition.getResolvableType",
+          "lineNumber": 133
+        },
+        {
+          "caller": "generateSetBeanDefinitionPropertiesCode",
+          "callee": "processedBeanDefinition.getPropertyValues().removePropertyValue",
+          "lineNumber": 134
+        },
+        {
+          "caller": "generateSetBeanDefinitionPropertiesCode",
+          "callee": "processedBeanDefinition.getPropertyValues",
+          "lineNumber": 134
+        },
+        {
+          "caller": "generateSetBeanDefinitionPropertiesCode",
+          "callee": "super.generateSetBeanDefinitionPropertiesCode",
+          "lineNumber": 136
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "beanRegistrationCode.getMethods().add",
+          "lineNumber": 146
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "beanRegistrationCode.getMethods",
+          "lineNumber": 146
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "method.addJavadoc",
+          "lineNumber": 148
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "this.registeredBean.getBeanName",
+          "lineNumber": 150
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "method.addModifiers",
+          "lineNumber": 151
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "method.returns",
+          "lineNumber": 152
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "method.addParameter",
+          "lineNumber": 153
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "method.addStatement",
+          "lineNumber": 155
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "method.addStatement",
+          "lineNumber": 158
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "method.addStatement",
+          "lineNumber": 160
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "method.addStatement",
+          "lineNumber": 163
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "CodeBlock.of",
+          "lineNumber": 165
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "generatedMethod.toMethodReference().toCodeBlock",
+          "lineNumber": 166
+        },
+        {
+          "caller": "generateInstanceSupplierCode",
+          "callee": "generatedMethod.toMethodReference",
+          "lineNumber": 166
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-aop/src/test/java/org/springframework/aop/aspectj/annotation/AspectJBeanFactoryInitializationAotProcessorTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "shouldSkipEmptyClass",
+          "startLine": 45,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "shouldProcessAspect",
+          "startLine": 50,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "process",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "beanClass"
+          ]
+        },
+        {
+          "name": "createContribution",
+          "startLine": 64,
+          "endLine": 69,
+          "params": [
+            "beanClass"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AspectJBeanFactoryInitializationAotProcessorTests",
+          "startLine": 41,
+          "endLine": 89,
+          "methods": [
+            "shouldSkipEmptyClass",
+            "shouldProcessAspect",
+            "process",
+            "createContribution"
+          ],
+          "properties": [
+            "generationContext"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldSkipEmptyClass",
+          "callee": "assertThat(createContribution(EmptyClass.class)).isNull",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldSkipEmptyClass",
+          "callee": "assertThat",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldSkipEmptyClass",
+          "callee": "createContribution",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldProcessAspect",
+          "callee": "process",
+          "lineNumber": 52
+        },
+        {
+          "caller": "shouldProcessAspect",
+          "callee": "assertThat(RuntimeHintsPredicates.reflection().onMethod(TestAspect.class, \"alterReturnValue\").invoke()).accepts",
+          "lineNumber": 53
+        },
+        {
+          "caller": "shouldProcessAspect",
+          "callee": "assertThat",
+          "lineNumber": 53
+        },
+        {
+          "caller": "shouldProcessAspect",
+          "callee": "RuntimeHintsPredicates.reflection().onMethod(TestAspect.class, \"alterReturnValue\").invoke",
+          "lineNumber": 53
+        },
+        {
+          "caller": "shouldProcessAspect",
+          "callee": "RuntimeHintsPredicates.reflection().onMethod",
+          "lineNumber": 53
+        },
+        {
+          "caller": "shouldProcessAspect",
+          "callee": "RuntimeHintsPredicates.reflection",
+          "lineNumber": 53
+        },
+        {
+          "caller": "shouldProcessAspect",
+          "callee": "this.generationContext.getRuntimeHints",
+          "lineNumber": 54
+        },
+        {
+          "caller": "process",
+          "callee": "createContribution",
+          "lineNumber": 58
+        },
+        {
+          "caller": "process",
+          "callee": "contribution.applyTo",
+          "lineNumber": 60
+        },
+        {
+          "caller": "process",
+          "callee": "mock",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createContribution",
+          "callee": "new DefaultListableBeanFactory",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createContribution",
+          "callee": "beanFactory.registerBeanDefinition",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createContribution",
+          "callee": "beanClass.getName",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createContribution",
+          "callee": "new RootBeanDefinition",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createContribution",
+          "callee": "new AspectJBeanFactoryInitializationAotProcessor().processAheadOfTime",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createContribution",
+          "callee": "new AspectJBeanFactoryInitializationAotProcessor",
+          "lineNumber": 68
+        },
+        {
+          "caller": "alterReturnValue",
+          "callee": "joinPoint.proceed",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-aop/src/test/java/org/springframework/aop/scope/ScopedProxyBeanRegistrationAotProcessorTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 162,
+      "nonEmptyLines": 141,
+      "functions": [
+        {
+          "name": "ScopedProxyBeanRegistrationAotProcessorTests",
+          "startLine": 71,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "scopedProxyBeanRegistrationAotProcessorIsRegistered",
+          "startLine": 79,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+          "startLine": 85,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "startLine": 96,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "startLine": 106,
+          "endLine": 116,
+          "params": []
+        },
+        {
+          "name": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "startLine": 118,
+          "endLine": 133,
+          "params": []
+        },
+        {
+          "name": "compile",
+          "startLine": 135,
+          "endLine": 160,
+          "params": [
+            "result"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ScopedProxyBeanRegistrationAotProcessorTests",
+          "startLine": 60,
+          "endLine": 162,
+          "methods": [
+            "ScopedProxyBeanRegistrationAotProcessorTests",
+            "scopedProxyBeanRegistrationAotProcessorIsRegistered",
+            "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+            "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+            "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+            "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+            "compile"
+          ],
+          "properties": [
+            "beanFactory",
+            "processor",
+            "generationContext",
+            "beanFactoryInitializationCode"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ScopedProxyBeanRegistrationAotProcessorTests",
+          "callee": "new DefaultListableBeanFactory",
+          "lineNumber": 72
+        },
+        {
+          "caller": "ScopedProxyBeanRegistrationAotProcessorTests",
+          "callee": "new TestBeanRegistrationsAotProcessor",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ScopedProxyBeanRegistrationAotProcessorTests",
+          "callee": "new TestGenerationContext",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ScopedProxyBeanRegistrationAotProcessorTests",
+          "callee": "new MockBeanFactoryInitializationCode",
+          "lineNumber": 75
+        },
+        {
+          "caller": "scopedProxyBeanRegistrationAotProcessorIsRegistered",
+          "callee": "assertThat(AotServices.factoriesAndBeans(this.beanFactory).load(BeanRegistrationAotProcessor.class)).anyMatch",
+          "lineNumber": 81
+        },
+        {
+          "caller": "scopedProxyBeanRegistrationAotProcessorIsRegistered",
+          "callee": "assertThat",
+          "lineNumber": 81
+        },
+        {
+          "caller": "scopedProxyBeanRegistrationAotProcessorIsRegistered",
+          "callee": "AotServices.factoriesAndBeans(this.beanFactory).load",
+          "lineNumber": 81
+        },
+        {
+          "caller": "scopedProxyBeanRegistrationAotProcessorIsRegistered",
+          "callee": "AotServices.factoriesAndBeans",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+          "callee": "BeanDefinitionBuilder\n\t\t\t\t.rootBeanDefinition(PropertiesFactoryBean.class).getBeanDefinition",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+          "callee": "BeanDefinitionBuilder.rootBeanDefinition",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+          "callee": "this.beanFactory.registerBeanDefinition",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+          "callee": "compile",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+          "callee": "freshBeanFactory.getBean",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+          "callee": "assertThat(bean).isInstanceOf",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenNotScopedProxy",
+          "callee": "assertThat",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "callee": "BeanDefinitionBuilder\n\t\t\t\t.rootBeanDefinition(ScopedProxyFactoryBean.class).getBeanDefinition",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "callee": "BeanDefinitionBuilder.rootBeanDefinition",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "callee": "this.beanFactory.registerBeanDefinition",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "callee": "compile",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "callee": "assertThatExceptionOfType(BeanCreationException.class).isThrownBy(() ->\n\t\t\t\t\tfreshBeanFactory.getBean(\"test\")).withMessageContaining",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "callee": "assertThatExceptionOfType(BeanCreationException.class).isThrownBy",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "callee": "assertThatExceptionOfType",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithoutTargetBeanName",
+          "callee": "freshBeanFactory.getBean",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "BeanDefinitionBuilder\n\t\t\t\t.rootBeanDefinition(ScopedProxyFactoryBean.class)\n\t\t\t\t.addPropertyValue(\"targetBeanName\", \"testDoesNotExist\").getBeanDefinition",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "BeanDefinitionBuilder\n\t\t\t\t.rootBeanDefinition(ScopedProxyFactoryBean.class).addPropertyValue",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "BeanDefinitionBuilder.rootBeanDefinition",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "this.beanFactory.registerBeanDefinition",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "compile",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "assertThatExceptionOfType(BeanCreationException.class).isThrownBy(() ->\n\t\t\t\t\t\tfreshBeanFactory.getBean(\"test\")).withMessageContaining",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "assertThatExceptionOfType(BeanCreationException.class).isThrownBy",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "assertThatExceptionOfType",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithInvalidTargetBeanName",
+          "callee": "freshBeanFactory.getBean",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "new RootBeanDefinition",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "targetBean.setTargetType",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "ResolvableType.forClassWithGenerics",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "targetBean.setScope",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "this.beanFactory.registerBeanDefinition",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "BeanDefinitionBuilder\n\t\t\t\t.rootBeanDefinition(ScopedProxyFactoryBean.class)\n\t\t\t\t.addPropertyValue(\"targetBeanName\", \"numberHolder\").getBeanDefinition",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "BeanDefinitionBuilder\n\t\t\t\t.rootBeanDefinition(ScopedProxyFactoryBean.class).addPropertyValue",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "BeanDefinitionBuilder.rootBeanDefinition",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "this.beanFactory.registerBeanDefinition",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "compile",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "freshBeanFactory.getBean",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "assertThat(bean).isInstanceOf(NumberHolder.class).isInstanceOf",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "assertThat(bean).isInstanceOf",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getBeanRegistrationCodeGeneratorWhenScopedProxyWithTargetBeanName",
+          "callee": "assertThat",
+          "lineNumber": 131
+        },
+        {
+          "caller": "compile",
+          "callee": "this.processor.processAheadOfTime",
+          "lineNumber": 137
+        },
+        {
+          "caller": "compile",
+          "callee": "assertThat(contribution).isNotNull",
+          "lineNumber": 138
+        },
+        {
+          "caller": "compile",
+          "callee": "assertThat",
+          "lineNumber": 138
+        },
+        {
+          "caller": "compile",
+          "callee": "contribution.applyTo",
+          "lineNumber": 139
+        },
+        {
+          "caller": "compile",
+          "callee": "this.beanFactoryInitializationCode\n\t\t\t\t.getInitializers().get",
+          "lineNumber": 140
+        },
+        {
+          "caller": "compile",
+          "callee": "this.beanFactoryInitializationCode.getInitializers",
+          "lineNumber": 140
+        },
+        {
+          "caller": "compile",
+          "callee": "this.beanFactoryInitializationCode.getTypeBuilder().set",
+          "lineNumber": 142
+        },
+        {
+          "caller": "compile",
+          "callee": "this.beanFactoryInitializationCode.getTypeBuilder",
+          "lineNumber": 142
+        },
+        {
+          "caller": "compile",
+          "callee": "methodReference.toInvokeCodeBlock",
+          "lineNumber": 143
+        },
+        {
+          "caller": "compile",
+          "callee": "ArgumentCodeGenerator.of",
+          "lineNumber": 144
+        },
+        {
+          "caller": "compile",
+          "callee": "this.beanFactoryInitializationCode.getClassName",
+          "lineNumber": 145
+        },
+        {
+          "caller": "compile",
+          "callee": "type.addModifiers",
+          "lineNumber": 146
+        },
+        {
+          "caller": "compile",
+          "callee": "type.addSuperinterface",
+          "lineNumber": 147
+        },
+        {
+          "caller": "compile",
+          "callee": "ParameterizedTypeName.get",
+          "lineNumber": 147
+        },
+        {
+          "caller": "compile",
+          "callee": "type.addMethod",
+          "lineNumber": 148
+        },
+        {
+          "caller": "compile",
+          "callee": "MethodSpec.methodBuilder(\"accept\").addModifiers(Modifier.PUBLIC)\n\t\t\t\t\t.addParameter(DefaultListableBeanFactory.class, \"beanFactory\")\n\t\t\t\t\t.addStatement(methodInvocation).build",
+          "lineNumber": 148
+        },
+        {
+          "caller": "compile",
+          "callee": "MethodSpec.methodBuilder(\"accept\").addModifiers(Modifier.PUBLIC)\n\t\t\t\t\t.addParameter(DefaultListableBeanFactory.class, \"beanFactory\").addStatement",
+          "lineNumber": 148
+        },
+        {
+          "caller": "compile",
+          "callee": "MethodSpec.methodBuilder(\"accept\").addModifiers(Modifier.PUBLIC).addParameter",
+          "lineNumber": 148
+        },
+        {
+          "caller": "compile",
+          "callee": "MethodSpec.methodBuilder(\"accept\").addModifiers",
+          "lineNumber": 148
+        },
+        {
+          "caller": "compile",
+          "callee": "MethodSpec.methodBuilder",
+          "lineNumber": 148
+        },
+        {
+          "caller": "compile",
+          "callee": "this.generationContext.writeGeneratedContent",
+          "lineNumber": 153
+        },
+        {
+          "caller": "compile",
+          "callee": "TestCompiler.forSystem().with(this.generationContext).compile",
+          "lineNumber": 154
+        },
+        {
+          "caller": "compile",
+          "callee": "TestCompiler.forSystem().with",
+          "lineNumber": 154
+        },
+        {
+          "caller": "compile",
+          "callee": "TestCompiler.forSystem",
+          "lineNumber": 154
+        },
+        {
+          "caller": "compile",
+          "callee": "new DefaultListableBeanFactory",
+          "lineNumber": 155
+        },
+        {
+          "caller": "compile",
+          "callee": "freshBeanFactory.setBeanClassLoader",
+          "lineNumber": 156
+        },
+        {
+          "caller": "compile",
+          "callee": "compiled.getClassLoader",
+          "lineNumber": 156
+        },
+        {
+          "caller": "compile",
+          "callee": "compiled.getInstance(Consumer.class).accept",
+          "lineNumber": 157
+        },
+        {
+          "caller": "compile",
+          "callee": "compiled.getInstance",
+          "lineNumber": 157
+        },
+        {
+          "caller": "compile",
+          "callee": "result.accept",
+          "lineNumber": 158
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-beans/src/main/java/org/springframework/beans/BeanUtilsRuntimeHints.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "registerHints",
+          "startLine": 35,
+          "endLine": 41,
+          "params": [
+            "hints",
+            "classLoader"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BeanUtilsRuntimeHints",
+          "startLine": 33,
+          "endLine": 43,
+          "methods": [
+            "registerHints"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "registerHints",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "registerHints",
+          "callee": "hints.reflection",
+          "lineNumber": 37
+        },
+        {
+          "caller": "registerHints",
+          "callee": "reflectionHints.registerType",
+          "lineNumber": 38
+        },
+        {
+          "caller": "registerHints",
+          "callee": "reflectionHints.registerTypeIfPresent",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-beans/src/main/java/org/springframework/beans/factory/aot/BeanFactoryInitializationAotContribution.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "BeanFactoryInitializationAotContribution",
+          "startLine": 33,
+          "endLine": 44,
+          "methods": [
+            "applyTo"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BeanFactoryInitializationAotContribution",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-beans/src/main/java/org/springframework/beans/factory/aot/BeanFactoryInitializationAotProcessor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 59,
+      "classes": [
+        {
+          "name": "BeanFactoryInitializationAotProcessor",
+          "startLine": 46,
+          "endLine": 64,
+          "methods": [
+            "processAheadOfTime"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BeanFactoryInitializationAotProcessor",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-beans/src/main/java/org/springframework/beans/factory/aot/BeanRegistrationAotContribution.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 74,
+      "classes": [
+        {
+          "name": "BeanRegistrationAotContribution",
+          "startLine": 33,
+          "endLine": 85,
+          "methods": [
+            "customizeBeanRegistrationCodeFragments",
+            "applyTo",
+            "withCustomCodeFragments"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BeanRegistrationAotContribution",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "withCustomCodeFragments",
+          "callee": "Assert.notNull",
+          "lineNumber": 70
+        },
+        {
+          "caller": "withCustomCodeFragments",
+          "callee": "new BeanRegistrationAotContribution",
+          "lineNumber": 72
+        },
+        {
+          "caller": "customizeBeanRegistrationCodeFragments",
+          "callee": "defaultCodeFragments.apply",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-beans/src/main/java/org/springframework/beans/factory/aot/BeanRegistrationAotProcessor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 75,
+      "classes": [
+        {
+          "name": "BeanRegistrationAotProcessor",
+          "startLine": 49,
+          "endLine": 81,
+          "methods": [
+            "processAheadOfTime",
+            "isBeanExcludedFromAotProcessing"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BeanRegistrationAotProcessor",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-beans/src/main/java/org/springframework/beans/factory/aot/BeanRegistrationCode.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "BeanRegistrationCode",
+          "startLine": 33,
+          "endLine": 56,
+          "methods": [
+            "getClassName",
+            "getMethods",
+            "addInstancePostProcessor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BeanRegistrationCode",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-beans/src/main/java/org/springframework/beans/factory/aot/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

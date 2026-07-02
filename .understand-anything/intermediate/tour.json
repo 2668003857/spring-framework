@@ -1,0 +1,92 @@
+[
+  {
+    "order": 1,
+    "title": "项目概览与架构",
+    "description": "了解Spring Framework的整体架构、模块划分和核心设计理念。从项目根目录结构开始，认识Spring的模块化设计。",
+    "nodeIds": [
+      "file:spring-core/src/main/java/org/springframework/core/ResolvableType.java",
+      "file:spring-core/src/main/java/org/springframework/core/convert/ConversionService.java",
+      "file:spring-beans/src/main/java/org/springframework/beans/annotation/Autowired.java"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "核心容器基础",
+    "description": "学习spring-core模块的核心工具类，包括类型转换系统、可观测性框架和核心工具，这些是整个Spring框架的基础。",
+    "nodeIds": [
+      "file:spring-core/src/main/java/org/springframework/core/ResolvableType.java",
+      "file:spring-core/src/main/java/org/springframework/core/convert/ConversionService.java",
+      "file:spring-core/src/main/java/org/springframework/core/convert/TypeDescriptor.java",
+      "file:spring-core/src/main/java/org/springframework/core/convert/converter/Converter.java",
+      "file:spring-core/src/main/java/org/springframework/core/convert/support/DefaultConversionService.java",
+      "file:spring-core/src/main/java/org/springframework/core/observation/Observation.java",
+      "file:spring-core/src/main/java/org/springframework/core/observation/DefaultObservationRegistry.java"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Bean工厂与依赖注入",
+    "description": "深入spring-beans模块，理解Bean定义、依赖注入机制、AOT处理和Bean生命周期管理的核心实现。",
+    "nodeIds": [
+      "file:spring-beans/src/main/java/org/springframework/beans/annotation/Autowired.java",
+      "file:spring-beans/src/main/java/org/springframework/beans/annotation/AutowiredAnnotationBeanPostProcessor.java",
+      "file:spring-beans/src/main/java/org/springframework/beans/factory/aot/BeanRegistrationAotProcessor.java",
+      "file:spring-beans/src/main/java/org/springframework/beans/factory/annotation/Bean.java",
+      "file:spring-beans/src/main/java/org/springframework/beans/factory/aot/BeanFactoryInitializationAotProcessor.java",
+      "file:spring-beans/src/main/java/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java",
+      "file:spring-beans/src/main/java/org/springframework/beans/annotation/Value.java"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "应用上下文",
+    "description": "探索spring-context模块，学习ApplicationContext的核心接口、事件发布机制、国际化支持和生命周期管理。",
+    "nodeIds": [
+      "file:spring-context/src/main/java/org/springframework/context/ApplicationContext.java",
+      "file:spring-context/src/main/java/org/springframework/context/ApplicationEvent.java",
+      "file:spring-context/src/main/java/org/springframework/context/ApplicationEventPublisher.java",
+      "file:spring-context/src/main/java/org/springframework/context/ApplicationListener.java",
+      "file:spring-context/src/main/java/org/springframework/context/ConfigurableApplicationContext.java",
+      "file:spring-context/src/main/java/org/springframework/context/event/ApplicationEventMulticaster.java",
+      "file:spring-context/src/main/java/org/springframework/context/event/EventListener.java"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "AOP面向切面编程",
+    "description": "学习spring-aop模块的切面编程能力，包括观察拦截器、AspectJ集成和AOT处理支持。",
+    "nodeIds": [
+      "file:spring-aop/src/main/java/org/springframework/aop/interceptor/observation/ObservationInterceptor.java",
+      "file:spring-aop/src/main/java/org/springframework/aop/interceptor/observation/MethodObservationContext.java",
+      "file:spring-aop/src/main/java/org/springframework/aop/interceptor/observation/DefaultObservationConvention.java",
+      "file:spring-aop/src/main/java/org/springframework/aop/aspectj/annotation/AspectJBeanFactoryInitializationAotProcessor.java",
+      "file:spring-aop/src/main/java/org/springframework/aop/scope/ScopedProxyBeanRegistrationAotProcessor.java"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Web MVC框架",
+    "description": "深入spring-webmvc模块，理解DispatcherServlet核心分发机制、处理器映射、适配器和视图解析的完整请求处理流程。",
+    "nodeIds": [
+      "file:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java",
+      "file:spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java",
+      "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java",
+      "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java",
+      "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndView.java",
+      "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ViewResolver.java",
+      "file:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java",
+      "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "测试支持",
+    "description": "学习spring-test模块的测试集成能力，包括测试上下文管理和可观测性测试支持。",
+    "nodeIds": [
+      "file:spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "file:integration-tests/src/test/java/org/springframework/aot/RuntimeHintsAgentTests.java",
+      "file:framework-docs/src/main/java/org/springframework/docs/core/aot/hints/testing/SampleReflectionRuntimeHintsTests.java",
+      "file:framework-docs/src/main/java/org/springframework/docs/integration/observability/config/conventions/CustomServerRequestObservationConvention.java"
+    ]
+  }
+]

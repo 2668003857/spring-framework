@@ -1,0 +1,1071 @@
+{
+  "nodes": [
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java",
+      "type": "file",
+      "name": "DispatcherServlet.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java",
+      "summary": "Spring MVC的核心前端控制器,负责请求分发、处理器映射、视图解析等核心功能。初始化并管理各种策略组件,包括HandlerMapping、HandlerAdapter、ViewResolver等。",
+      "tags": ["核心控制器", "前端控制器", "请求分发", "mvc核心"],
+      "complexity": "complex",
+      "lineRange": [1, 1516],
+      "languageNotes": "Java Servlet核心实现,包含超过1300行代码,是Spring MVC架构的中心组件"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "type": "class",
+      "name": "DispatcherServlet",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java",
+      "lineRange": [163, 1516],
+      "summary": "Spring MVC核心分发器Servlet类,继承自FrameworkServlet,实现请求的完整处理流程。",
+      "tags": ["核心类", "servlet", "分发器", "控制器"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:doDispatch",
+      "type": "function",
+      "name": "doDispatch",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java",
+      "lineRange": [1040, 1121],
+      "summary": "核心请求分发方法,处理HTTP请求的完整流程,包括获取处理器、执行拦截器、调用处理器适配器、渲染视图等。",
+      "tags": ["核心方法", "请求分发", "http处理"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:initStrategies",
+      "type": "function",
+      "name": "initStrategies",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java",
+      "lineRange": [504, 514],
+      "summary": "初始化所有策略组件,包括MultipartResolver、LocaleResolver、ThemeResolver、HandlerMappings、HandlerAdapters等。",
+      "tags": ["初始化", "策略组件", "核心方法"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java",
+      "type": "file",
+      "name": "FrameworkServlet.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java",
+      "summary": "DispatcherServlet的抽象基类,提供Spring Web应用上下文集成功能。负责初始化WebApplicationContext,管理Servlet生命周期,并提供请求处理的基础架构。",
+      "tags": ["基类", "servlet", "上下文管理", "mvc框架"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java:FrameworkServlet",
+      "type": "class",
+      "name": "FrameworkServlet",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java",
+      "lineRange": [1, 1223],
+      "summary": "抽象基类,提供Spring MVC Servlet的基础框架功能,包括WebApplicationContext管理和请求处理基础。",
+      "tags": ["抽象类", "基类", "servlet", "web上下文"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java",
+      "type": "file",
+      "name": "HandlerAdapter.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java",
+      "summary": "处理器适配器接口,定义了使用自定义处理器处理请求的契约。支持各种处理器类型,包括Controller、HttpRequestHandler等。",
+      "tags": ["接口", "适配器", "处理器", "mvc核心"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java:HandlerAdapter",
+      "type": "class",
+      "name": "HandlerAdapter",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java",
+      "lineRange": [1, 92],
+      "summary": "处理器适配器接口,Spring MVC核心扩展点之一,允许框架使用任何处理器类型处理HTTP请求。",
+      "tags": ["接口", "适配器", "扩展点"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerExceptionResolver.java",
+      "type": "file",
+      "name": "HandlerExceptionResolver.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerExceptionResolver.java",
+      "summary": "异常解析器接口,定义了在处理器执行过程中遇到异常时的处理策略。可以将异常映射到特定的错误视图或其他处理方式。",
+      "tags": ["接口", "异常处理", "解析器", "mvc核心"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerExceptionResolver.java:HandlerExceptionResolver",
+      "type": "class",
+      "name": "HandlerExceptionResolver",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerExceptionResolver.java",
+      "lineRange": [1, 56],
+      "summary": "处理器异常解析器接口,用于解析处理器执行过程中抛出的异常。",
+      "tags": ["接口", "异常处理", "解析器"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java",
+      "type": "file",
+      "name": "HandlerInterceptor.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java",
+      "summary": "处理器拦截器接口,允许在处理器执行前、执行后以及请求完成后进行自定义拦截处理。用于实现横切关注点,如日志、权限、性能监控等。",
+      "tags": ["接口", "拦截器", "aop", "横切关注点"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java:HandlerInterceptor",
+      "type": "class",
+      "name": "HandlerInterceptor",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java",
+      "lineRange": [1, 153],
+      "summary": "处理器拦截器接口,定义了三个生命周期方法:preHandle、postHandle和afterCompletion。",
+      "tags": ["接口", "拦截器", "生命周期"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java",
+      "type": "file",
+      "name": "HandlerMapping.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java",
+      "summary": "处理器映射接口,负责将HTTP请求映射到相应的处理器。是Spring MVC的核心组件之一,决定了请求由哪个处理器处理。",
+      "tags": ["接口", "映射", "处理器", "路由"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java:HandlerMapping",
+      "type": "class",
+      "name": "HandlerMapping",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java",
+      "lineRange": [1, 173],
+      "summary": "处理器映射接口,根据请求URL和其他条件查找对应的处理器Handler和拦截器列表。",
+      "tags": ["接口", "映射", "路由"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/LocaleResolver.java",
+      "type": "file",
+      "name": "LocaleResolver.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/LocaleResolver.java",
+      "summary": "区域解析器接口,负责解析和设置请求的Locale信息。支持多种解析策略,如基于请求参数、Cookie、Session等。",
+      "tags": ["接口", "国际化", "区域解析", "i18n"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/LocaleResolver.java:LocaleResolver",
+      "type": "class",
+      "name": "LocaleResolver",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/LocaleResolver.java",
+      "lineRange": [1, 74],
+      "summary": "区域解析器接口,用于从请求中解析Locale信息并设置到响应中。",
+      "tags": ["接口", "国际化", "locale"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndView.java",
+      "type": "file",
+      "name": "ModelAndView.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndView.java",
+      "summary": "模型和视图持有者类,表示处理器返回的结果,包含模型数据和视图信息。既可以包含实际的View对象,也可以包含视图名称字符串供ViewResolver解析。",
+      "tags": ["数据持有者", "模型", "视图", "返回值"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndView.java:ModelAndView",
+      "type": "class",
+      "name": "ModelAndView",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndView.java",
+      "lineRange": [1, 362],
+      "summary": "模型和视图容器类,用于在处理器和视图之间传递数据和视图信息。",
+      "tags": ["容器类", "模型", "视图"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndViewDefiningException.java",
+      "type": "file",
+      "name": "ModelAndViewDefiningException.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndViewDefiningException.java",
+      "summary": "特殊异常类,用于在处理器执行期间指定一个特定的ModelAndView。通常由拦截器抛出以强制渲染特定视图。",
+      "tags": ["异常", "视图定义", "拦截器"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndViewDefiningException.java:ModelAndViewDefiningException",
+      "type": "class",
+      "name": "ModelAndViewDefiningException",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndViewDefiningException.java",
+      "lineRange": [1, 58],
+      "summary": "自定义异常类,持有ModelAndView对象,用于在异常流中指定要渲染的视图。",
+      "tags": ["异常类", "视图定义"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/RequestToViewNameTranslator.java",
+      "type": "file",
+      "name": "RequestToViewNameTranslator.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/RequestToViewNameTranslator.java",
+      "summary": "请求到视图名称转换器接口,当处理器没有显式返回视图名称时,负责从请求中推断视图名称。",
+      "tags": ["接口", "视图名称", "转换器"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/RequestToViewNameTranslator.java:RequestToViewNameTranslator",
+      "type": "class",
+      "name": "RequestToViewNameTranslator",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/RequestToViewNameTranslator.java",
+      "lineRange": [1, 44],
+      "summary": "请求到视图名称转换器接口,用于在处理器未返回视图时自动生成视图名称。",
+      "tags": ["接口", "转换器", "视图名称"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ThemeResolver.java",
+      "type": "file",
+      "name": "ThemeResolver.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/ThemeResolver.java",
+      "summary": "主题解析器接口,负责解析和设置Web应用的主题。主题用于控制应用的外观样式,类似于皮肤功能。",
+      "tags": ["接口", "主题", "样式", "外观"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ThemeResolver.java:ThemeResolver",
+      "type": "class",
+      "name": "ThemeResolver",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/ThemeResolver.java",
+      "lineRange": [1, 71],
+      "summary": "主题解析器接口,用于解析和设置当前请求的主题。",
+      "tags": ["接口", "主题", "解析器"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/View.java",
+      "type": "file",
+      "name": "View.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/View.java",
+      "summary": "视图接口,定义了渲染Web页面的契约。负责将模型数据渲染成各种格式的输出,如HTML、JSON、XML等。",
+      "tags": ["接口", "视图", "渲染", "输出"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/View.java:View",
+      "type": "class",
+      "name": "View",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/View.java",
+      "lineRange": [1, 100],
+      "summary": "视图接口,定义了render方法用于将模型数据渲染到HTTP响应中。",
+      "tags": ["接口", "视图", "渲染"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ViewResolver.java",
+      "type": "file",
+      "name": "ViewResolver.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/ViewResolver.java",
+      "summary": "视图解析器接口,负责将视图名称解析为实际的View对象。支持多种解析策略,如基于JSP、FreeMarker、Thymeleaf等模板引擎。",
+      "tags": ["接口", "视图解析", "模板", "渲染"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ViewResolver.java:ViewResolver",
+      "type": "class",
+      "name": "ViewResolver",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/ViewResolver.java",
+      "lineRange": [1, 58],
+      "summary": "视图解析器接口,根据视图名称和Locale解析出对应的View对象。",
+      "tags": ["接口", "视图解析", "解析器"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java",
+      "type": "file",
+      "name": "WebMvcConfigurer.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java",
+      "summary": "Spring MVC配置接口,提供了丰富的回调方法用于自定义Spring MVC的配置。包括拦截器注册、视图控制器、资源处理、跨域配置等。",
+      "tags": ["配置接口", "mvc配置", "回调", "自定义"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java:WebMvcConfigurer",
+      "type": "class",
+      "name": "WebMvcConfigurer",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java",
+      "lineRange": [1, 245],
+      "summary": "Spring MVC配置接口,提供默认空实现,方便用户有选择地重写需要自定义的配置方法。",
+      "tags": ["配置接口", "默认实现", "mvc"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java",
+      "type": "file",
+      "name": "WebMvcConfigurationSupport.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java",
+      "summary": "Spring MVC配置支持类,提供了Spring MVC的主要Java配置。定义了大量的@Bean方法来创建MVC基础设施组件,如RequestMappingHandlerMapping、RequestMappingHandlerAdapter等。",
+      "tags": ["配置类", "java配置", "mvc基础设施", "bean定义"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java:WebMvcConfigurationSupport",
+      "type": "class",
+      "name": "WebMvcConfigurationSupport",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java",
+      "lineRange": [1, 1190],
+      "summary": "Spring MVC配置支持类,提供MVC基础设施的Java配置,通常与@EnableWebMvc一起使用。",
+      "tags": ["配置类", "基础设施", "java配置"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMapping.java",
+      "type": "file",
+      "name": "AbstractHandlerMapping.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMapping.java",
+      "summary": "HandlerMapping的抽象基类,提供了通用的功能实现,包括CORS配置、拦截器管理等。是所有具体HandlerMapping实现的基类。",
+      "tags": ["抽象类", "基类", "处理器映射", "cors"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMapping.java:AbstractHandlerMapping",
+      "type": "class",
+      "name": "AbstractHandlerMapping",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMapping.java",
+      "lineRange": [1, 741],
+      "summary": "HandlerMapping接口的抽象实现,提供拦截器管理、CORS处理等通用功能。",
+      "tags": ["抽象类", "基类", "处理器映射"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractUrlHandlerMapping.java",
+      "type": "file",
+      "name": "AbstractUrlHandlerMapping.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractUrlHandlerMapping.java",
+      "summary": "基于URL的处理器映射抽象基类,提供URL路径匹配功能。支持Ant风格的路径匹配模式,并提供路径匹配的核心实现。",
+      "tags": ["抽象类", "url映射", "路径匹配", "ant模式"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractUrlHandlerMapping.java:AbstractUrlHandlerMapping",
+      "type": "class",
+      "name": "AbstractUrlHandlerMapping",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractUrlHandlerMapping.java",
+      "lineRange": [1, 537],
+      "summary": "基于URL的处理器映射抽象基类,实现URL路径匹配和处理器查找逻辑。",
+      "tags": ["抽象类", "url映射", "路径匹配"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/MatchableHandlerMapping.java",
+      "type": "file",
+      "name": "MatchableHandlerMapping.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/MatchableHandlerMapping.java",
+      "summary": "可匹配的HandlerMapping扩展接口,定义了请求模式匹配的能力。允许检查某个请求是否匹配特定的模式。",
+      "tags": ["接口", "扩展接口", "模式匹配", "请求匹配"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/MatchableHandlerMapping.java:MatchableHandlerMapping",
+      "type": "class",
+      "name": "MatchableHandlerMapping",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/MatchableHandlerMapping.java",
+      "lineRange": [1, 57],
+      "summary": "HandlerMapping的扩展接口,添加了请求模式匹配功能。",
+      "tags": ["接口", "扩展", "模式匹配"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleServletPostProcessor.java",
+      "type": "file",
+      "name": "SimpleServletPostProcessor.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleServletPostProcessor.java",
+      "summary": "Servlet Bean后处理器,对Servlet类型的Bean进行初始化处理。主要用于处理Servlet的初始化参数和ServletConfig相关的依赖注入。",
+      "tags": ["后处理器", "servlet", "bean生命周期", "初始化"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleServletPostProcessor.java:SimpleServletPostProcessor",
+      "type": "class",
+      "name": "SimpleServletPostProcessor",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleServletPostProcessor.java",
+      "lineRange": [1, 177],
+      "summary": "Servlet Bean后处理器,实现BeanPostProcessor接口,处理Servlet类型Bean的初始化。",
+      "tags": ["后处理器", "servlet", "bean"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.java",
+      "type": "file",
+      "name": "SimpleUrlHandlerMapping.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.java",
+      "summary": "简单URL到处理器映射的实现类。允许通过显式配置URL模式到处理器Bean的映射关系,支持Map配置方式。",
+      "tags": ["映射实现", "url映射", "配置类", "处理器注册"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.java:SimpleUrlHandlerMapping",
+      "type": "class",
+      "name": "SimpleUrlHandlerMapping",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.java",
+      "lineRange": [1, 191],
+      "summary": "基于URL的简单处理器映射实现,支持通过Map配置URL模式与处理器的映射关系。",
+      "tags": ["映射实现", "url映射", "配置"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/ConversionServiceExposingInterceptor.java",
+      "type": "file",
+      "name": "ConversionServiceExposingInterceptor.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/ConversionServiceExposingInterceptor.java",
+      "summary": "转换服务暴露拦截器,在请求属性中暴露Spring的ConversionService。使ConversionService可在视图层用于数据转换和格式化。",
+      "tags": ["拦截器", "转换服务", "数据绑定", "视图层"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/ConversionServiceExposingInterceptor.java:ConversionServiceExposingInterceptor",
+      "type": "class",
+      "name": "ConversionServiceExposingInterceptor",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/ConversionServiceExposingInterceptor.java",
+      "lineRange": [1, 63],
+      "summary": "拦截器实现,将ConversionService暴露为请求属性,供视图层使用。",
+      "tags": ["拦截器", "转换服务", "暴露"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java",
+      "type": "file",
+      "name": "Controller.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java",
+      "summary": "控制器基接口,是处理HTTP请求的组件的核心契约。实现类负责处理请求并返回ModelAndView对象。这是Spring MVC中最基础的控制器接口。",
+      "tags": ["接口", "控制器", "请求处理", "mvc核心"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java:Controller",
+      "type": "class",
+      "name": "Controller",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java",
+      "lineRange": [1, 127],
+      "summary": "控制器核心接口,定义handleRequest方法处理HTTP请求并返回ModelAndView。",
+      "tags": ["接口", "控制器", "请求处理"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/LastModified.java",
+      "type": "file",
+      "name": "LastModified.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/LastModified.java",
+      "summary": "最后修改时间检查接口,用于支持HTTP缓存。实现类可以提供资源的最后修改时间,框架据此判断是否需要重新渲染或可以返回304状态码。",
+      "tags": ["接口", "缓存", "http优化", "性能优化"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/LastModified.java:LastModified",
+      "type": "class",
+      "name": "LastModified",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/LastModified.java",
+      "lineRange": [1, 65],
+      "summary": "支持HTTP缓存的接口,提供getLastModified方法判断资源是否过期。",
+      "tags": ["接口", "缓存", "http"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ParameterizableViewController.java",
+      "type": "file",
+      "name": "ParameterizableViewController.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ParameterizableViewController.java",
+      "summary": "可参数化的视图控制器实现,用于简单的场景,如静态页面跳转,不需要实际的业务逻辑处理。可以配置视图名称、状态码等属性。",
+      "tags": ["控制器实现", "视图跳转", "静态页面", "配置化"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ParameterizableViewController.java:ParameterizableViewController",
+      "type": "class",
+      "name": "ParameterizableViewController",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ParameterizableViewController.java",
+      "lineRange": [1, 201],
+      "summary": "可参数化配置的控制器,用于简单的视图跳转,无需业务逻辑处理。",
+      "tags": ["控制器", "视图跳转", "可配置"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletForwardingController.java",
+      "type": "file",
+      "name": "ServletForwardingController.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletForwardingController.java",
+      "summary": "Servlet转发控制器实现,将请求转发到指定的Servlet实例。主要用于在Spring MVC环境中集成现有的Servlet组件。",
+      "tags": ["控制器实现", "servlet集成", "请求转发", "集成"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletForwardingController.java:ServletForwardingController",
+      "type": "class",
+      "name": "ServletForwardingController",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletForwardingController.java",
+      "lineRange": [1, 169],
+      "summary": "控制器实现,将请求转发到指定的Servlet,实现Spring MVC与Servlet的集成。",
+      "tags": ["控制器", "servlet", "转发"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletWrappingController.java",
+      "type": "file",
+      "name": "ServletWrappingController.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletWrappingController.java",
+      "summary": "Servlet包装控制器实现,用于在Spring环境中管理一个Servlet实例。负责Servlet的初始化和生命周期管理,使Servlet可以作为Spring Bean使用。",
+      "tags": ["控制器实现", "servlet包装", "生命周期管理", "bean集成"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletWrappingController.java:ServletWrappingController",
+      "type": "class",
+      "name": "ServletWrappingController",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletWrappingController.java",
+      "lineRange": [1, 214],
+      "summary": "控制器实现,包装并管理一个Servlet实例的生命周期,使其成为Spring Bean。",
+      "tags": ["控制器", "servlet", "包装", "生命周期"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/condition/AbstractNameValueExpression.java",
+      "type": "file",
+      "name": "AbstractNameValueExpression.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/condition/AbstractNameValueExpression.java",
+      "summary": "名称值表达式抽象基类,用于请求条件匹配。支持请求参数、请求头等名称值对的匹配逻辑,是请求条件匹配的基础类。",
+      "tags": ["抽象类", "表达式", "条件匹配", "请求参数"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/condition/AbstractNameValueExpression.java:AbstractNameValueExpression",
+      "type": "class",
+      "name": "AbstractNameValueExpression",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/condition/AbstractNameValueExpression.java",
+      "lineRange": [1, 137],
+      "summary": "名称值表达式抽象基类,提供请求参数和请求头匹配的通用逻辑。",
+      "tags": ["抽象类", "表达式", "条件匹配"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMethodAdapter.java",
+      "type": "file",
+      "name": "AbstractHandlerMethodAdapter.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMethodAdapter.java",
+      "summary": "处理器方法适配器抽象基类,支持基于HandlerMethod的处理器调用。提供方法调用的基础架构,包括参数解析、返回值处理等核心功能。",
+      "tags": ["抽象类", "方法适配器", "处理器调用", "参数解析"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMethodAdapter.java:AbstractHandlerMethodAdapter",
+      "type": "class",
+      "name": "AbstractHandlerMethodAdapter",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMethodAdapter.java",
+      "lineRange": [1, 200],
+      "summary": "HandlerAdapter的抽象实现,支持基于HandlerMethod的处理器调用。",
+      "tags": ["抽象类", "适配器", "方法调用"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/HandlerExecutionChain.java",
+      "type": "file",
+      "name": "HandlerExecutionChain.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/HandlerExecutionChain.java",
+      "summary": "处理器执行链类,封装处理器对象和对应的拦截器列表。负责在请求处理过程中依次调用拦截器的各个生命周期方法。",
+      "tags": ["执行链", "拦截器", "处理器", "责任链模式"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/HandlerExecutionChain.java:HandlerExecutionChain",
+      "type": "class",
+      "name": "HandlerExecutionChain",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/handler/HandlerExecutionChain.java",
+      "lineRange": [1, 200],
+      "summary": "处理器执行链,包含处理器对象和拦截器列表,实现责任链模式。",
+      "tags": ["执行链", "拦截器", "责任链"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpRequestHandler.java",
+      "type": "file",
+      "name": "HttpRequestHandler.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpRequestHandler.java",
+      "summary": "HTTP请求处理器接口,用于处理HTTP请求并直接生成响应。与Controller不同,此接口不返回ModelAndView,而是直接操作HttpServletResponse。",
+      "tags": ["接口", "请求处理", "http", "直接响应"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpRequestHandler.java:HttpRequestHandler",
+      "type": "class",
+      "name": "HttpRequestHandler",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpRequestHandler.java",
+      "lineRange": [1, 100],
+      "summary": "HTTP请求处理器接口,直接处理HTTP请求并写入响应,不经过视图解析。",
+      "tags": ["接口", "请求处理", "http"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpServletRequestHandler.java",
+      "type": "file",
+      "name": "HttpServletRequestHandler.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpServletRequestHandler.java",
+      "summary": "HTTP Servlet请求处理器接口,专门用于处理HttpServletRequest。提供对Servlet API的直接访问能力。",
+      "tags": ["接口", "servlet请求", "http", "api访问"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpServletRequestHandler.java:HttpServletRequestHandler",
+      "type": "class",
+      "name": "HttpServletRequestHandler",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpServletRequestHandler.java",
+      "lineRange": [1, 100],
+      "summary": "处理HttpServletRequest的处理器接口,提供Servlet API直接访问。",
+      "tags": ["接口", "servlet", "请求处理"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ModelAndViewDefiningException.java",
+      "type": "file",
+      "name": "ModelAndViewDefiningException.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ModelAndViewDefiningException.java",
+      "summary": "定义ModelAndView的异常类。处理器或拦截器可以抛出此异常来指定一个特定的ModelAndView用于渲染。",
+      "tags": ["异常", "视图定义", "异常控制流"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ModelAndViewDefiningException.java:ModelAndViewDefiningException",
+      "type": "class",
+      "name": "ModelAndViewDefiningException",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ModelAndViewDefiningException.java",
+      "lineRange": [1, 100],
+      "summary": "包含ModelAndView的异常类,用于在异常流程中指定视图。",
+      "tags": ["异常类", "视图定义"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/NoHandlerFoundException.java",
+      "type": "file",
+      "name": "NoHandlerFoundException.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/NoHandlerFoundException.java",
+      "summary": "未找到处理器异常,当DispatcherServlet无法找到匹配的处理器处理请求时抛出。通常对应HTTP 404错误。",
+      "tags": ["异常", "404错误", "处理器未找到", "错误处理"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/NoHandlerFoundException.java:NoHandlerFoundException",
+      "type": "class",
+      "name": "NoHandlerFoundException",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/NoHandlerFoundException.java",
+      "lineRange": [1, 100],
+      "summary": "请求未找到处理器时抛出的异常,对应HTTP 404状态。",
+      "tags": ["异常类", "404", "未找到"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebContentGenerator.java",
+      "type": "file",
+      "name": "WebContentGenerator.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebContentGenerator.java",
+      "summary": "Web内容生成器抽象基类,提供处理HTTP缓存头、内容类型、请求方法等通用功能。是许多控制器相关类的父类。",
+      "tags": ["抽象类", "内容生成", "http缓存", "通用功能"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebContentGenerator.java:WebContentGenerator",
+      "type": "class",
+      "name": "WebContentGenerator",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebContentGenerator.java",
+      "lineRange": [1, 200],
+      "summary": "Web内容生成器基类,提供HTTP缓存头、内容类型等通用处理功能。",
+      "tags": ["抽象类", "内容生成", "缓存处理"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebRequestInterceptor.java",
+      "type": "file",
+      "name": "WebRequestInterceptor.java",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebRequestInterceptor.java",
+      "summary": "Web请求拦截器接口,基于WebRequest抽象的拦截器契约。与HandlerInterceptor类似,但使用更通用的WebRequest API。",
+      "tags": ["接口", "拦截器", "webrequest", "通用api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebRequestInterceptor.java:WebRequestInterceptor",
+      "type": "class",
+      "name": "WebRequestInterceptor",
+      "filePath": "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebRequestInterceptor.java",
+      "lineRange": [1, 100],
+      "summary": "基于WebRequest的拦截器接口,提供请求处理的生命周期回调。",
+      "tags": ["接口", "拦截器", "webrequest"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "target": "function:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:doDispatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "target": "function:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:initStrategies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java:FrameworkServlet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/FrameworkServlet.java:FrameworkServlet",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java:HandlerAdapter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerExceptionResolver.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerExceptionResolver.java:HandlerExceptionResolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java:HandlerInterceptor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java:HandlerMapping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/LocaleResolver.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/LocaleResolver.java:LocaleResolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndView.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndView.java:ModelAndView",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndViewDefiningException.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ModelAndViewDefiningException.java:ModelAndViewDefiningException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/RequestToViewNameTranslator.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/RequestToViewNameTranslator.java:RequestToViewNameTranslator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ThemeResolver.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ThemeResolver.java:ThemeResolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/View.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/View.java:View",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/ViewResolver.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ViewResolver.java:ViewResolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java:WebMvcConfigurer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java:WebMvcConfigurationSupport",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMapping.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMapping.java:AbstractHandlerMapping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMapping.java:AbstractHandlerMapping",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java:HandlerMapping",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractUrlHandlerMapping.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractUrlHandlerMapping.java:AbstractUrlHandlerMapping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractUrlHandlerMapping.java:AbstractUrlHandlerMapping",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMapping.java:AbstractHandlerMapping",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/MatchableHandlerMapping.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/MatchableHandlerMapping.java:MatchableHandlerMapping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/MatchableHandlerMapping.java:MatchableHandlerMapping",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java:HandlerMapping",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleServletPostProcessor.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleServletPostProcessor.java:SimpleServletPostProcessor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.java:SimpleUrlHandlerMapping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.java:SimpleUrlHandlerMapping",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractUrlHandlerMapping.java:AbstractUrlHandlerMapping",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/ConversionServiceExposingInterceptor.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/ConversionServiceExposingInterceptor.java:ConversionServiceExposingInterceptor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/ConversionServiceExposingInterceptor.java:ConversionServiceExposingInterceptor",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java:HandlerInterceptor",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java:Controller",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/LastModified.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/LastModified.java:LastModified",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ParameterizableViewController.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ParameterizableViewController.java:ParameterizableViewController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ParameterizableViewController.java:ParameterizableViewController",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java:Controller",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletForwardingController.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletForwardingController.java:ServletForwardingController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletForwardingController.java:ServletForwardingController",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java:Controller",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletWrappingController.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletWrappingController.java:ServletWrappingController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ServletWrappingController.java:ServletWrappingController",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/Controller.java:Controller",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/condition/AbstractNameValueExpression.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/condition/AbstractNameValueExpression.java:AbstractNameValueExpression",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerMapping.java:HandlerMapping",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java:HandlerAdapter",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/ViewResolver.java:ViewResolver",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/DispatcherServlet.java:DispatcherServlet",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerExceptionResolver.java:HandlerExceptionResolver",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java:WebMvcConfigurationSupport",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.java:WebMvcConfigurer",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMethodAdapter.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMethodAdapter.java:AbstractHandlerMethodAdapter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/AbstractHandlerMethodAdapter.java:AbstractHandlerMethodAdapter",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerAdapter.java:HandlerAdapter",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/HandlerExecutionChain.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/HandlerExecutionChain.java:HandlerExecutionChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpRequestHandler.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpRequestHandler.java:HttpRequestHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpServletRequestHandler.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/HttpServletRequestHandler.java:HttpServletRequestHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ModelAndViewDefiningException.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ModelAndViewDefiningException.java:ModelAndViewDefiningException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/NoHandlerFoundException.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/NoHandlerFoundException.java:NoHandlerFoundException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebContentGenerator.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebContentGenerator.java:WebContentGenerator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebRequestInterceptor.java",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebRequestInterceptor.java:WebRequestInterceptor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/handler/HandlerExecutionChain.java:HandlerExecutionChain",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/HandlerInterceptor.java:HandlerInterceptor",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/ParameterizableViewController.java:ParameterizableViewController",
+      "target": "class:spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/WebContentGenerator.java:WebContentGenerator",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

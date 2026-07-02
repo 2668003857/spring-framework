@@ -1,0 +1,4934 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 161,
+      "nonEmptyLines": 141,
+      "functions": [
+        {
+          "name": "MicrometerObservationRegistryTestExecutionListener",
+          "startLine": 98,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "getOrder",
+          "startLine": 110,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "beforeTestMethod",
+          "startLine": 125,
+          "endLine": 139,
+          "params": [
+            "testContext"
+          ]
+        },
+        {
+          "name": "afterTestMethod",
+          "startLine": 148,
+          "endLine": 159,
+          "params": [
+            "testContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MicrometerObservationRegistryTestExecutionListener",
+          "startLine": 44,
+          "endLine": 161,
+          "methods": [
+            "MicrometerObservationRegistryTestExecutionListener",
+            "getOrder",
+            "beforeTestMethod",
+            "afterTestMethod"
+          ],
+          "properties": [
+            "logger",
+            "PREVIOUS_OBSERVATION_REGISTRY",
+            "DEPENDENCIES_ERROR_MESSAGE",
+            "THREAD_LOCAL_ACCESSOR_CLASS_NAME",
+            "OBSERVATION_THREAD_LOCAL_ACCESSOR_CLASS_NAME",
+            "ERROR_MESSAGE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MicrometerObservationRegistryTestExecutionListener",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "beforeTestMethod",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "afterTestMethod",
+          "line": 148,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MicrometerObservationRegistryTestExecutionListener",
+          "callee": "new NoClassDefFoundError",
+          "lineNumber": 102
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "testContext.getApplicationContext().getBeanProvider(ObservationRegistry.class).ifAvailable",
+          "lineNumber": 127
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "testContext.getApplicationContext().getBeanProvider",
+          "lineNumber": 127
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "testContext.getApplicationContext",
+          "lineNumber": 127
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "logger.isDebugEnabled",
+          "lineNumber": 129
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "logger.debug",
+          "lineNumber": 130
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "testContext.getTestClass().getName",
+          "lineNumber": 133
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "testContext.getTestClass",
+          "lineNumber": 133
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "ObservationThreadLocalAccessor.getInstance",
+          "lineNumber": 135
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "testContext.setAttribute",
+          "lineNumber": 136
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "accessor.getObservationRegistry",
+          "lineNumber": 136
+        },
+        {
+          "caller": "beforeTestMethod",
+          "callee": "accessor.setObservationRegistry",
+          "lineNumber": 137
+        },
+        {
+          "caller": "afterTestMethod",
+          "callee": "testContext.removeAttribute",
+          "lineNumber": 151
+        },
+        {
+          "caller": "afterTestMethod",
+          "callee": "logger.isDebugEnabled",
+          "lineNumber": 153
+        },
+        {
+          "caller": "afterTestMethod",
+          "callee": "logger.debug",
+          "lineNumber": 154
+        },
+        {
+          "caller": "afterTestMethod",
+          "callee": "testContext.getTestClass().getName",
+          "lineNumber": 155
+        },
+        {
+          "caller": "afterTestMethod",
+          "callee": "testContext.getTestClass",
+          "lineNumber": 155
+        },
+        {
+          "caller": "afterTestMethod",
+          "callee": "ObservationThreadLocalAccessor.getInstance().setObservationRegistry",
+          "lineNumber": 157
+        },
+        {
+          "caller": "afterTestMethod",
+          "callee": "ObservationThreadLocalAccessor.getInstance",
+          "lineNumber": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerDependencyTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "allDependenciesArePresent",
+          "startLine": 44,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "threadLocalAccessorIsNotPresent",
+          "startLine": 52,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "observationThreadLocalAccessorIsNotPresent",
+          "startLine": 57,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "assertNoClassDefFoundErrorIsThrown",
+          "startLine": 62,
+          "endLine": 67,
+          "params": [
+            "missingClassName"
+          ]
+        },
+        {
+          "name": "assertExceptionThrown",
+          "startLine": 69,
+          "endLine": 75,
+          "params": [
+            "missingClassName",
+            "listenerClass"
+          ]
+        },
+        {
+          "name": "instantiateListener",
+          "startLine": 77,
+          "endLine": 82,
+          "params": [
+            "listenerClass"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MicrometerObservationRegistryTestExecutionListenerDependencyTests",
+          "startLine": 42,
+          "endLine": 112,
+          "methods": [
+            "allDependenciesArePresent",
+            "threadLocalAccessorIsNotPresent",
+            "observationThreadLocalAccessorIsNotPresent",
+            "assertNoClassDefFoundErrorIsThrown",
+            "assertExceptionThrown",
+            "instantiateListener"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "new FilteringClassLoader",
+          "lineNumber": 46
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "getClass().getClassLoader",
+          "lineNumber": 46
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "getClass",
+          "lineNumber": 46
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "classLoader.loadClass",
+          "lineNumber": 47
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "MicrometerObservationRegistryTestExecutionListener.class.getName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "IntStream.rangeClosed(1, 5).forEach",
+          "lineNumber": 49
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "IntStream.rangeClosed",
+          "lineNumber": 49
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "assertThatNoException().isThrownBy",
+          "lineNumber": 49
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "assertThatNoException",
+          "lineNumber": 49
+        },
+        {
+          "caller": "allDependenciesArePresent",
+          "callee": "instantiateListener",
+          "lineNumber": 49
+        },
+        {
+          "caller": "threadLocalAccessorIsNotPresent",
+          "callee": "assertNoClassDefFoundErrorIsThrown",
+          "lineNumber": 54
+        },
+        {
+          "caller": "observationThreadLocalAccessorIsNotPresent",
+          "callee": "assertNoClassDefFoundErrorIsThrown",
+          "lineNumber": 59
+        },
+        {
+          "caller": "assertNoClassDefFoundErrorIsThrown",
+          "callee": "new FilteringClassLoader",
+          "lineNumber": 63
+        },
+        {
+          "caller": "assertNoClassDefFoundErrorIsThrown",
+          "callee": "getClass().getClassLoader",
+          "lineNumber": 63
+        },
+        {
+          "caller": "assertNoClassDefFoundErrorIsThrown",
+          "callee": "getClass",
+          "lineNumber": 63
+        },
+        {
+          "caller": "assertNoClassDefFoundErrorIsThrown",
+          "callee": "classLoader.loadClass",
+          "lineNumber": 64
+        },
+        {
+          "caller": "assertNoClassDefFoundErrorIsThrown",
+          "callee": "MicrometerObservationRegistryTestExecutionListener.class.getName",
+          "lineNumber": 64
+        },
+        {
+          "caller": "assertNoClassDefFoundErrorIsThrown",
+          "callee": "IntStream.rangeClosed(1, 5).forEach",
+          "lineNumber": 66
+        },
+        {
+          "caller": "assertNoClassDefFoundErrorIsThrown",
+          "callee": "IntStream.rangeClosed",
+          "lineNumber": 66
+        },
+        {
+          "caller": "assertNoClassDefFoundErrorIsThrown",
+          "callee": "assertExceptionThrown",
+          "lineNumber": 66
+        },
+        {
+          "caller": "assertExceptionThrown",
+          "callee": "assertThatExceptionOfType(InvocationTargetException.class)\n\t\t\t\t.isThrownBy(() -> instantiateListener(listenerClass))\n\t\t\t\t.havingCause()\n\t\t\t\t\t.isInstanceOf(NoClassDefFoundError.class).withMessage",
+          "lineNumber": 70
+        },
+        {
+          "caller": "assertExceptionThrown",
+          "callee": "assertThatExceptionOfType(InvocationTargetException.class)\n\t\t\t\t.isThrownBy(() -> instantiateListener(listenerClass))\n\t\t\t\t.havingCause().isInstanceOf",
+          "lineNumber": 70
+        },
+        {
+          "caller": "assertExceptionThrown",
+          "callee": "assertThatExceptionOfType(InvocationTargetException.class)\n\t\t\t\t.isThrownBy(() -> instantiateListener(listenerClass)).havingCause",
+          "lineNumber": 70
+        },
+        {
+          "caller": "assertExceptionThrown",
+          "callee": "assertThatExceptionOfType(InvocationTargetException.class).isThrownBy",
+          "lineNumber": 70
+        },
+        {
+          "caller": "assertExceptionThrown",
+          "callee": "assertThatExceptionOfType",
+          "lineNumber": 70
+        },
+        {
+          "caller": "assertExceptionThrown",
+          "callee": "instantiateListener",
+          "lineNumber": 71
+        },
+        {
+          "caller": "instantiateListener",
+          "callee": "assertThat(listenerClass).isNotNull",
+          "lineNumber": 78
+        },
+        {
+          "caller": "instantiateListener",
+          "callee": "assertThat",
+          "lineNumber": 78
+        },
+        {
+          "caller": "instantiateListener",
+          "callee": "listenerClass.getDeclaredConstructor",
+          "lineNumber": 79
+        },
+        {
+          "caller": "instantiateListener",
+          "callee": "constructor.setAccessible",
+          "lineNumber": 80
+        },
+        {
+          "caller": "instantiateListener",
+          "callee": "constructor.newInstance",
+          "lineNumber": 81
+        },
+        {
+          "caller": "isEligibleForOverriding",
+          "callee": "this.classNameFilter.or(isListenerClass).test",
+          "lineNumber": 100
+        },
+        {
+          "caller": "isEligibleForOverriding",
+          "callee": "this.classNameFilter.or",
+          "lineNumber": 100
+        },
+        {
+          "caller": "loadClass",
+          "callee": "this.classNameFilter.test",
+          "lineNumber": 105
+        },
+        {
+          "caller": "loadClass",
+          "callee": "new ClassNotFoundException",
+          "lineNumber": 106
+        },
+        {
+          "caller": "loadClass",
+          "callee": "super.loadClass",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "configureTestContextMock",
+          "startLine": 58,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "observationRegistryIsNotOverridden",
+          "startLine": 70,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "startLine": 81,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "startLine": 99,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "globalObservationRegistry",
+          "startLine": 103,
+          "endLine": 105,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MicrometerObservationRegistryTestExecutionListenerTests",
+          "startLine": 45,
+          "endLine": 107,
+          "methods": [
+            "configureTestContextMock",
+            "observationRegistryIsNotOverridden",
+            "observationRegistryIsOverriddenByBeanFromApplicationContext",
+            "assertGlobalObservationRegistryIsSameAsOriginal",
+            "globalObservationRegistry"
+          ],
+          "properties": [
+            "originalObservationRegistry",
+            "testContext",
+            "applicationContext",
+            "attributes",
+            "listener"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "configureTestContextMock",
+          "callee": "willAnswer(invocation -> attributes.put(invocation.getArgument(0), invocation.getArgument(1)))\n\t\t\t\t.given(testContext).setAttribute",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "willAnswer(invocation -> attributes.put(invocation.getArgument(0), invocation.getArgument(1))).given",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "willAnswer",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "attributes.put",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "invocation.getArgument",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "invocation.getArgument",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "anyString",
+          "lineNumber": 62
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "any",
+          "lineNumber": 62
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "given(testContext.removeAttribute(anyString())).willAnswer",
+          "lineNumber": 63
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "given",
+          "lineNumber": 63
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "testContext.removeAttribute",
+          "lineNumber": 63
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "anyString",
+          "lineNumber": 63
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "attributes.get",
+          "lineNumber": 64
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "invocation.getArgument",
+          "lineNumber": 64
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "given(testContext.getApplicationContext()).willReturn",
+          "lineNumber": 65
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "given",
+          "lineNumber": 65
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "testContext.getApplicationContext",
+          "lineNumber": 65
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "getClass",
+          "lineNumber": 66
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "given(testContext.getTestClass()).willReturn",
+          "lineNumber": 67
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "given",
+          "lineNumber": 67
+        },
+        {
+          "caller": "configureTestContextMock",
+          "callee": "testContext.getTestClass",
+          "lineNumber": 67
+        },
+        {
+          "caller": "observationRegistryIsNotOverridden",
+          "callee": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "lineNumber": 72
+        },
+        {
+          "caller": "observationRegistryIsNotOverridden",
+          "callee": "listener.beforeTestMethod",
+          "lineNumber": 74
+        },
+        {
+          "caller": "observationRegistryIsNotOverridden",
+          "callee": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "lineNumber": 75
+        },
+        {
+          "caller": "observationRegistryIsNotOverridden",
+          "callee": "listener.afterTestMethod",
+          "lineNumber": 77
+        },
+        {
+          "caller": "observationRegistryIsNotOverridden",
+          "callee": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "lineNumber": 78
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "lineNumber": 83
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "ObservationRegistry.create",
+          "lineNumber": 85
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "applicationContext.getDefaultListableBeanFactory().registerSingleton",
+          "lineNumber": 86
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "applicationContext.getDefaultListableBeanFactory",
+          "lineNumber": 86
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "listener.beforeTestMethod",
+          "lineNumber": 88
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "globalObservationRegistry",
+          "lineNumber": 89
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "assertThat(globalObservationRegistry)\n\t\t\t\t.as(\"The global ObservationRegistry should have been replaced with the one from the application context\")\n\t\t\t\t.isNotSameAs(originalObservationRegistry).isSameAs",
+          "lineNumber": 90
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "assertThat(globalObservationRegistry)\n\t\t\t\t.as(\"The global ObservationRegistry should have been replaced with the one from the application context\").isNotSameAs",
+          "lineNumber": 90
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "assertThat(globalObservationRegistry).as",
+          "lineNumber": 90
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "assertThat",
+          "lineNumber": 90
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "listener.afterTestMethod",
+          "lineNumber": 95
+        },
+        {
+          "caller": "observationRegistryIsOverriddenByBeanFromApplicationContext",
+          "callee": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "lineNumber": 96
+        },
+        {
+          "caller": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "callee": "assertThat(globalObservationRegistry()).isSameAs",
+          "lineNumber": 100
+        },
+        {
+          "caller": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "callee": "assertThat",
+          "lineNumber": 100
+        },
+        {
+          "caller": "assertGlobalObservationRegistryIsSameAsOriginal",
+          "callee": "globalObservationRegistry",
+          "lineNumber": 100
+        },
+        {
+          "caller": "globalObservationRegistry",
+          "callee": "ObservationThreadLocalAccessor.getInstance().getObservationRegistry",
+          "lineNumber": 104
+        },
+        {
+          "caller": "globalObservationRegistry",
+          "callee": "ObservationThreadLocalAccessor.getInstance",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/client/observation/ClientHttpObservationDocumentation.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 132,
+      "callGraph": [
+        {
+          "caller": "getLowCardinalityKeyNames",
+          "callee": "LowCardinalityKeyNames.values",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/client/observation/ClientRequestObservationContext.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "ClientRequestObservationContext",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "setRequestHeader",
+          "startLine": 47,
+          "endLine": 51,
+          "params": [
+            "request",
+            "name",
+            "value"
+          ]
+        },
+        {
+          "name": "getUriTemplate",
+          "startLine": 56,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "setUriTemplate",
+          "startLine": 64,
+          "endLine": 66,
+          "params": [
+            "uriTemplate"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClientRequestObservationContext",
+          "startLine": 33,
+          "endLine": 68,
+          "methods": [
+            "ClientRequestObservationContext",
+            "setRequestHeader",
+            "getUriTemplate",
+            "setUriTemplate"
+          ],
+          "properties": [
+            "uriTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClientRequestObservationContext",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getUriTemplate",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "setUriTemplate",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "ClientRequestObservationContext",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ClientRequestObservationContext",
+          "callee": "setCarrier",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setRequestHeader",
+          "callee": "request.getHeaders().set",
+          "lineNumber": 49
+        },
+        {
+          "caller": "setRequestHeader",
+          "callee": "request.getHeaders",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/client/observation/ClientRequestObservationConvention.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "ClientRequestObservationConvention",
+          "startLine": 29,
+          "endLine": 36,
+          "methods": [
+            "supportsContext"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ClientRequestObservationConvention",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/client/observation/DefaultClientRequestObservationConvention.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 190,
+      "nonEmptyLines": 153,
+      "functions": [
+        {
+          "name": "DefaultClientRequestObservationConvention",
+          "startLine": 69,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "DefaultClientRequestObservationConvention",
+          "startLine": 77,
+          "endLine": 79,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getName",
+          "startLine": 81,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "getContextualName",
+          "startLine": 86,
+          "endLine": 89,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "getLowCardinalityKeyValues",
+          "startLine": 91,
+          "endLine": 95,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "uri",
+          "startLine": 97,
+          "endLine": 102,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "extractPath",
+          "startLine": 104,
+          "endLine": 107,
+          "params": [
+            "uriTemplate"
+          ]
+        },
+        {
+          "name": "method",
+          "startLine": 109,
+          "endLine": 116,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "status",
+          "startLine": 118,
+          "endLine": 129,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "clientName",
+          "startLine": 131,
+          "endLine": 136,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "exception",
+          "startLine": 138,
+          "endLine": 146,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "outcome",
+          "startLine": 148,
+          "endLine": 158,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "getHighCardinalityKeyValues",
+          "startLine": 160,
+          "endLine": 164,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "requestUri",
+          "startLine": 166,
+          "endLine": 171,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultClientRequestObservationConvention",
+          "startLine": 39,
+          "endLine": 190,
+          "methods": [
+            "DefaultClientRequestObservationConvention",
+            "DefaultClientRequestObservationConvention",
+            "getName",
+            "getContextualName",
+            "getLowCardinalityKeyValues",
+            "uri",
+            "extractPath",
+            "method",
+            "status",
+            "clientName",
+            "exception",
+            "outcome",
+            "getHighCardinalityKeyValues",
+            "requestUri"
+          ],
+          "properties": [
+            "DEFAULT_NAME",
+            "PATTERN_BEFORE_PATH",
+            "URI_NONE",
+            "METHOD_NONE",
+            "STATUS_IO_ERROR",
+            "STATUS_CLIENT_ERROR",
+            "HTTP_OUTCOME_SUCCESS",
+            "HTTP_OUTCOME_UNKNOWN",
+            "CLIENT_NAME_NONE",
+            "EXCEPTION_NONE",
+            "HTTP_URL_NONE",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DefaultClientRequestObservationConvention",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultClientRequestObservationConvention",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "getName",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getContextualName",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "getLowCardinalityKeyValues",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getHighCardinalityKeyValues",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultClientRequestObservationConvention",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier().getMethod().name().toLowerCase",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier().getMethod().name",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier().getMethod",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "KeyValues.of",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "clientName",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "exception",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "method",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "outcome",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "status",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "uri",
+          "lineNumber": 94
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getUriTemplate",
+          "lineNumber": 98
+        },
+        {
+          "caller": "uri",
+          "callee": "KeyValue.of",
+          "lineNumber": 99
+        },
+        {
+          "caller": "uri",
+          "callee": "extractPath",
+          "lineNumber": 99
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getUriTemplate",
+          "lineNumber": 99
+        },
+        {
+          "caller": "extractPath",
+          "callee": "PATTERN_BEFORE_PATH.matcher(uriTemplate).replaceFirst",
+          "lineNumber": 105
+        },
+        {
+          "caller": "extractPath",
+          "callee": "PATTERN_BEFORE_PATH.matcher",
+          "lineNumber": 105
+        },
+        {
+          "caller": "extractPath",
+          "callee": "path.startsWith",
+          "lineNumber": 106
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier",
+          "lineNumber": 110
+        },
+        {
+          "caller": "method",
+          "callee": "KeyValue.of",
+          "lineNumber": 111
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier().getMethod().name",
+          "lineNumber": 111
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier().getMethod",
+          "lineNumber": 111
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier",
+          "lineNumber": 111
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse",
+          "lineNumber": 119
+        },
+        {
+          "caller": "status",
+          "callee": "KeyValue.of",
+          "lineNumber": 124
+        },
+        {
+          "caller": "status",
+          "callee": "String.valueOf",
+          "lineNumber": 124
+        },
+        {
+          "caller": "status",
+          "callee": "response.getStatusCode().value",
+          "lineNumber": 124
+        },
+        {
+          "caller": "status",
+          "callee": "response.getStatusCode",
+          "lineNumber": 124
+        },
+        {
+          "caller": "clientName",
+          "callee": "context.getCarrier",
+          "lineNumber": 132
+        },
+        {
+          "caller": "clientName",
+          "callee": "context.getCarrier().getURI().getHost",
+          "lineNumber": 132
+        },
+        {
+          "caller": "clientName",
+          "callee": "context.getCarrier().getURI",
+          "lineNumber": 132
+        },
+        {
+          "caller": "clientName",
+          "callee": "context.getCarrier",
+          "lineNumber": 132
+        },
+        {
+          "caller": "clientName",
+          "callee": "KeyValue.of",
+          "lineNumber": 133
+        },
+        {
+          "caller": "clientName",
+          "callee": "context.getCarrier().getURI().getHost",
+          "lineNumber": 133
+        },
+        {
+          "caller": "clientName",
+          "callee": "context.getCarrier().getURI",
+          "lineNumber": 133
+        },
+        {
+          "caller": "clientName",
+          "callee": "context.getCarrier",
+          "lineNumber": 133
+        },
+        {
+          "caller": "exception",
+          "callee": "context.getError",
+          "lineNumber": 139
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass().getSimpleName",
+          "lineNumber": 141
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass",
+          "lineNumber": 141
+        },
+        {
+          "caller": "exception",
+          "callee": "KeyValue.of",
+          "lineNumber": 142
+        },
+        {
+          "caller": "exception",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 143
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass().getName",
+          "lineNumber": 143
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass",
+          "lineNumber": 143
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse",
+          "lineNumber": 149
+        },
+        {
+          "caller": "outcome",
+          "callee": "HttpOutcome.forStatus",
+          "lineNumber": 151
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse().getStatusCode",
+          "lineNumber": 151
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getHighCardinalityKeyValues",
+          "callee": "KeyValues.of",
+          "lineNumber": 163
+        },
+        {
+          "caller": "getHighCardinalityKeyValues",
+          "callee": "requestUri",
+          "lineNumber": 163
+        },
+        {
+          "caller": "requestUri",
+          "callee": "context.getCarrier",
+          "lineNumber": 167
+        },
+        {
+          "caller": "requestUri",
+          "callee": "KeyValue.of",
+          "lineNumber": 168
+        },
+        {
+          "caller": "requestUri",
+          "callee": "context.getCarrier().getURI().toASCIIString",
+          "lineNumber": 168
+        },
+        {
+          "caller": "requestUri",
+          "callee": "context.getCarrier().getURI",
+          "lineNumber": 168
+        },
+        {
+          "caller": "requestUri",
+          "callee": "context.getCarrier",
+          "lineNumber": 168
+        },
+        {
+          "caller": "forStatus",
+          "callee": "statusCode.is2xxSuccessful",
+          "lineNumber": 177
+        },
+        {
+          "caller": "forStatus",
+          "callee": "KeyValue.of",
+          "lineNumber": 181
+        },
+        {
+          "caller": "forStatus",
+          "callee": "status.series().name",
+          "lineNumber": 181
+        },
+        {
+          "caller": "forStatus",
+          "callee": "status.series",
+          "lineNumber": 181
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 14,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/server/observation/DefaultServerRequestObservationConvention.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 182,
+      "nonEmptyLines": 146,
+      "functions": [
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "startLine": 65,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "startLine": 73,
+          "endLine": 75,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getName",
+          "startLine": 78,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "getContextualName",
+          "startLine": 83,
+          "endLine": 90,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "getLowCardinalityKeyValues",
+          "startLine": 92,
+          "endLine": 96,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "getHighCardinalityKeyValues",
+          "startLine": 98,
+          "endLine": 102,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "method",
+          "startLine": 104,
+          "endLine": 108,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "status",
+          "startLine": 110,
+          "endLine": 114,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "uri",
+          "startLine": 116,
+          "endLine": 138,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "exception",
+          "startLine": 140,
+          "endLine": 148,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "outcome",
+          "startLine": 150,
+          "endLine": 156,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "httpUrl",
+          "startLine": 158,
+          "endLine": 163,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "startLine": 34,
+          "endLine": 182,
+          "methods": [
+            "DefaultServerRequestObservationConvention",
+            "DefaultServerRequestObservationConvention",
+            "getName",
+            "getContextualName",
+            "getLowCardinalityKeyValues",
+            "getHighCardinalityKeyValues",
+            "method",
+            "status",
+            "uri",
+            "exception",
+            "outcome",
+            "httpUrl"
+          ],
+          "properties": [
+            "DEFAULT_NAME",
+            "METHOD_UNKNOWN",
+            "STATUS_UNKNOWN",
+            "HTTP_OUTCOME_SUCCESS",
+            "HTTP_OUTCOME_UNKNOWN",
+            "URI_UNKNOWN",
+            "URI_ROOT",
+            "URI_NOT_FOUND",
+            "URI_REDIRECTION",
+            "EXCEPTION_NONE",
+            "HTTP_URL_UNKNOWN",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getName",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getContextualName",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "getLowCardinalityKeyValues",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "getHighCardinalityKeyValues",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier().getMethod().toLowerCase",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier().getMethod",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getPathPattern",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getPathPattern",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "KeyValues.of",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "exception",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "method",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "outcome",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "status",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "uri",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getHighCardinalityKeyValues",
+          "callee": "KeyValues.of",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getHighCardinalityKeyValues",
+          "callee": "httpUrl",
+          "lineNumber": 101
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier",
+          "lineNumber": 105
+        },
+        {
+          "caller": "method",
+          "callee": "KeyValue.of",
+          "lineNumber": 106
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier().getMethod",
+          "lineNumber": 106
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier",
+          "lineNumber": 106
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse",
+          "lineNumber": 111
+        },
+        {
+          "caller": "status",
+          "callee": "KeyValue.of",
+          "lineNumber": 112
+        },
+        {
+          "caller": "status",
+          "callee": "Integer.toString",
+          "lineNumber": 112
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse().getStatus",
+          "lineNumber": 112
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse",
+          "lineNumber": 112
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getCarrier",
+          "lineNumber": 117
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getPathPattern",
+          "lineNumber": 118
+        },
+        {
+          "caller": "uri",
+          "callee": "pattern.isEmpty",
+          "lineNumber": 120
+        },
+        {
+          "caller": "uri",
+          "callee": "KeyValue.of",
+          "lineNumber": 123
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse",
+          "lineNumber": 125
+        },
+        {
+          "caller": "uri",
+          "callee": "HttpStatus.resolve",
+          "lineNumber": 126
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse().getStatus",
+          "lineNumber": 126
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse",
+          "lineNumber": 126
+        },
+        {
+          "caller": "uri",
+          "callee": "status.is3xxRedirection",
+          "lineNumber": 128
+        },
+        {
+          "caller": "exception",
+          "callee": "context.getError",
+          "lineNumber": 141
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass().getSimpleName",
+          "lineNumber": 143
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass",
+          "lineNumber": 143
+        },
+        {
+          "caller": "exception",
+          "callee": "KeyValue.of",
+          "lineNumber": 144
+        },
+        {
+          "caller": "exception",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 145
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass().getName",
+          "lineNumber": 145
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass",
+          "lineNumber": 145
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse",
+          "lineNumber": 151
+        },
+        {
+          "caller": "outcome",
+          "callee": "HttpStatusCode.valueOf",
+          "lineNumber": 152
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse().getStatus",
+          "lineNumber": 152
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse",
+          "lineNumber": 152
+        },
+        {
+          "caller": "outcome",
+          "callee": "HttpOutcome.forStatus",
+          "lineNumber": 153
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "context.getCarrier",
+          "lineNumber": 159
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "KeyValue.of",
+          "lineNumber": 160
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "context.getCarrier().getRequestURI",
+          "lineNumber": 160
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "context.getCarrier",
+          "lineNumber": 160
+        },
+        {
+          "caller": "forStatus",
+          "callee": "statusCode.is2xxSuccessful",
+          "lineNumber": 169
+        },
+        {
+          "caller": "forStatus",
+          "callee": "KeyValue.of",
+          "lineNumber": 173
+        },
+        {
+          "caller": "forStatus",
+          "callee": "status.series().name",
+          "lineNumber": 173
+        },
+        {
+          "caller": "forStatus",
+          "callee": "status.series",
+          "lineNumber": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/server/observation/ServerHttpObservationDocumentation.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 109,
+      "callGraph": [
+        {
+          "caller": "getLowCardinalityKeyNames",
+          "callee": "LowCardinalityKeyNames.values",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getHighCardinalityKeyNames",
+          "callee": "HighCardinalityKeyNames.values",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/server/observation/ServerRequestObservationContext.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "ServerRequestObservationContext",
+          "startLine": 39,
+          "endLine": 43,
+          "params": [
+            "request",
+            "response"
+          ]
+        },
+        {
+          "name": "getPathPattern",
+          "startLine": 45,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "setPathPattern",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "pathPattern"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ServerRequestObservationContext",
+          "startLine": 34,
+          "endLine": 53,
+          "methods": [
+            "ServerRequestObservationContext",
+            "getPathPattern",
+            "setPathPattern"
+          ],
+          "properties": [
+            "pathPattern"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServerRequestObservationContext",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "getPathPattern",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "setPathPattern",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "ServerRequestObservationContext",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ServerRequestObservationContext",
+          "callee": "setCarrier",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ServerRequestObservationContext",
+          "callee": "setResponse",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/server/observation/ServerRequestObservationConvention.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "ServerRequestObservationConvention",
+          "startLine": 28,
+          "endLine": 35,
+          "methods": [
+            "supportsContext"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServerRequestObservationConvention",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConvention.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 187,
+      "nonEmptyLines": 151,
+      "functions": [
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "startLine": 65,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "startLine": 73,
+          "endLine": 75,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getName",
+          "startLine": 78,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "getContextualName",
+          "startLine": 83,
+          "endLine": 90,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "getLowCardinalityKeyValues",
+          "startLine": 92,
+          "endLine": 96,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "getHighCardinalityKeyValues",
+          "startLine": 98,
+          "endLine": 102,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "method",
+          "startLine": 104,
+          "endLine": 108,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "status",
+          "startLine": 110,
+          "endLine": 117,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "uri",
+          "startLine": 119,
+          "endLine": 141,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "exception",
+          "startLine": 143,
+          "endLine": 151,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "outcome",
+          "startLine": 153,
+          "endLine": 161,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "httpUrl",
+          "startLine": 163,
+          "endLine": 168,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "startLine": 34,
+          "endLine": 187,
+          "methods": [
+            "DefaultServerRequestObservationConvention",
+            "DefaultServerRequestObservationConvention",
+            "getName",
+            "getContextualName",
+            "getLowCardinalityKeyValues",
+            "getHighCardinalityKeyValues",
+            "method",
+            "status",
+            "uri",
+            "exception",
+            "outcome",
+            "httpUrl"
+          ],
+          "properties": [
+            "DEFAULT_NAME",
+            "METHOD_UNKNOWN",
+            "STATUS_UNKNOWN",
+            "HTTP_OUTCOME_SUCCESS",
+            "HTTP_OUTCOME_UNKNOWN",
+            "URI_UNKNOWN",
+            "URI_ROOT",
+            "URI_NOT_FOUND",
+            "URI_REDIRECTION",
+            "EXCEPTION_NONE",
+            "HTTP_URL_UNKNOWN",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getName",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getContextualName",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "getLowCardinalityKeyValues",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "getHighCardinalityKeyValues",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultServerRequestObservationConvention",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier().getMethod().name().toLowerCase",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier().getMethod().name",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier().getMethod",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getCarrier",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getPathPattern",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getContextualName",
+          "callee": "context.getPathPattern",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "KeyValues.of",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "exception",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "method",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "outcome",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "status",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getLowCardinalityKeyValues",
+          "callee": "uri",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getHighCardinalityKeyValues",
+          "callee": "KeyValues.of",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getHighCardinalityKeyValues",
+          "callee": "httpUrl",
+          "lineNumber": 101
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier",
+          "lineNumber": 105
+        },
+        {
+          "caller": "method",
+          "callee": "KeyValue.of",
+          "lineNumber": 106
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier().getMethod().name",
+          "lineNumber": 106
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier().getMethod",
+          "lineNumber": 106
+        },
+        {
+          "caller": "method",
+          "callee": "context.getCarrier",
+          "lineNumber": 106
+        },
+        {
+          "caller": "status",
+          "callee": "context.isConnectionAborted",
+          "lineNumber": 111
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse",
+          "lineNumber": 111
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse().isCommitted",
+          "lineNumber": 111
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse",
+          "lineNumber": 111
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse",
+          "lineNumber": 114
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse().getStatusCode",
+          "lineNumber": 114
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse",
+          "lineNumber": 114
+        },
+        {
+          "caller": "status",
+          "callee": "KeyValue.of",
+          "lineNumber": 115
+        },
+        {
+          "caller": "status",
+          "callee": "Integer.toString",
+          "lineNumber": 115
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse().getStatusCode().value",
+          "lineNumber": 115
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse().getStatusCode",
+          "lineNumber": 115
+        },
+        {
+          "caller": "status",
+          "callee": "context.getResponse",
+          "lineNumber": 115
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getCarrier",
+          "lineNumber": 120
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getPathPattern",
+          "lineNumber": 121
+        },
+        {
+          "caller": "uri",
+          "callee": "pattern.isEmpty",
+          "lineNumber": 123
+        },
+        {
+          "caller": "uri",
+          "callee": "KeyValue.of",
+          "lineNumber": 126
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse",
+          "lineNumber": 128
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse().getStatusCode",
+          "lineNumber": 128
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse",
+          "lineNumber": 128
+        },
+        {
+          "caller": "uri",
+          "callee": "HttpStatus.resolve",
+          "lineNumber": 129
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse().getStatusCode().value",
+          "lineNumber": 129
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse().getStatusCode",
+          "lineNumber": 129
+        },
+        {
+          "caller": "uri",
+          "callee": "context.getResponse",
+          "lineNumber": 129
+        },
+        {
+          "caller": "uri",
+          "callee": "status.is3xxRedirection",
+          "lineNumber": 131
+        },
+        {
+          "caller": "exception",
+          "callee": "context.getError",
+          "lineNumber": 144
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass().getSimpleName",
+          "lineNumber": 146
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass",
+          "lineNumber": 146
+        },
+        {
+          "caller": "exception",
+          "callee": "KeyValue.of",
+          "lineNumber": 147
+        },
+        {
+          "caller": "exception",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 147
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass().getName",
+          "lineNumber": 148
+        },
+        {
+          "caller": "exception",
+          "callee": "error.getClass",
+          "lineNumber": 148
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.isConnectionAborted",
+          "lineNumber": 154
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse",
+          "lineNumber": 157
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse().getStatusCode",
+          "lineNumber": 157
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse",
+          "lineNumber": 157
+        },
+        {
+          "caller": "outcome",
+          "callee": "HttpOutcome.forStatus",
+          "lineNumber": 158
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse().getStatusCode",
+          "lineNumber": 158
+        },
+        {
+          "caller": "outcome",
+          "callee": "context.getResponse",
+          "lineNumber": 158
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "context.getCarrier",
+          "lineNumber": 164
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "KeyValue.of",
+          "lineNumber": 165
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "context.getCarrier().getPath().toString",
+          "lineNumber": 165
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "context.getCarrier().getPath",
+          "lineNumber": 165
+        },
+        {
+          "caller": "httpUrl",
+          "callee": "context.getCarrier",
+          "lineNumber": 165
+        },
+        {
+          "caller": "forStatus",
+          "callee": "statusCode.is2xxSuccessful",
+          "lineNumber": 174
+        },
+        {
+          "caller": "forStatus",
+          "callee": "KeyValue.of",
+          "lineNumber": 178
+        },
+        {
+          "caller": "forStatus",
+          "callee": "status.series().name",
+          "lineNumber": 178
+        },
+        {
+          "caller": "forStatus",
+          "callee": "status.series",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerHttpObservationDocumentation.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 109,
+      "callGraph": [
+        {
+          "caller": "getLowCardinalityKeyNames",
+          "callee": "LowCardinalityKeyNames.values",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getHighCardinalityKeyNames",
+          "callee": "HighCardinalityKeyNames.values",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerRequestObservationContext.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 94,
+      "functions": [
+        {
+          "name": "ServerRequestObservationContext",
+          "startLine": 55,
+          "endLine": 62,
+          "params": [
+            "request",
+            "response",
+            "attributes"
+          ]
+        },
+        {
+          "name": "getAttributes",
+          "startLine": 68,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "getPathPattern",
+          "startLine": 78,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "setPathPattern",
+          "startLine": 88,
+          "endLine": 90,
+          "params": [
+            "pathPattern"
+          ]
+        },
+        {
+          "name": "isConnectionAborted",
+          "startLine": 98,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "setConnectionAborted",
+          "startLine": 108,
+          "endLine": 110,
+          "params": [
+            "connectionAborted"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ServerRequestObservationContext",
+          "startLine": 39,
+          "endLine": 112,
+          "methods": [
+            "ServerRequestObservationContext",
+            "getAttributes",
+            "getPathPattern",
+            "setPathPattern",
+            "isConnectionAborted",
+            "setConnectionAborted"
+          ],
+          "properties": [
+            "attributes",
+            "pathPattern",
+            "connectionAborted"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServerRequestObservationContext",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getAttributes",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "getPathPattern",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "setPathPattern",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "isConnectionAborted",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "setConnectionAborted",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "ServerRequestObservationContext",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ServerRequestObservationContext",
+          "callee": "req.getHeaders().getFirst",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ServerRequestObservationContext",
+          "callee": "req.getHeaders",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ServerRequestObservationContext",
+          "callee": "setCarrier",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ServerRequestObservationContext",
+          "callee": "setResponse",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ServerRequestObservationContext",
+          "callee": "Collections.unmodifiableMap",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerRequestObservationConvention.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "ServerRequestObservationConvention",
+          "startLine": 28,
+          "endLine": 35,
+          "methods": [
+            "supportsContext"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServerRequestObservationConvention",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/test/java/org/springframework/http/client/observation/DefaultClientRequestObservationConventionTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 100,
+      "functions": [
+        {
+          "name": "shouldHaveName",
+          "startLine": 47,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "shouldHaveContextualName",
+          "startLine": 52,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "supportsOnlyClientHttpObservationContext",
+          "startLine": 58,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForRequestWithUriTemplate",
+          "startLine": 65,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "startLine": 76,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForRequestWithoutUriTemplate",
+          "startLine": 88,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "addsClientNameForRequestWithHost",
+          "startLine": 97,
+          "endLine": 103,
+          "params": []
+        },
+        {
+          "name": "addsKeyValueForNonResolvableStatus",
+          "startLine": 105,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "createContext",
+          "startLine": 114,
+          "endLine": 118,
+          "params": [
+            "request",
+            "response"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultClientRequestObservationConventionTests",
+          "startLine": 41,
+          "endLine": 120,
+          "methods": [
+            "shouldHaveName",
+            "shouldHaveContextualName",
+            "supportsOnlyClientHttpObservationContext",
+            "addsKeyValuesForRequestWithUriTemplate",
+            "addsKeyValuesForRequestWithUriTemplateWithHost",
+            "addsKeyValuesForRequestWithoutUriTemplate",
+            "addsClientNameForRequestWithHost",
+            "addsKeyValueForNonResolvableStatus",
+            "createContext"
+          ],
+          "properties": [
+            "request",
+            "observationConvention"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldHaveName",
+          "callee": "assertThat(this.observationConvention.getName()).isEqualTo",
+          "lineNumber": 49
+        },
+        {
+          "caller": "shouldHaveName",
+          "callee": "assertThat",
+          "lineNumber": 49
+        },
+        {
+          "caller": "shouldHaveName",
+          "callee": "this.observationConvention.getName",
+          "lineNumber": 49
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "new ClientRequestObservationContext",
+          "lineNumber": 54
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "assertThat(this.observationConvention.getContextualName(context)).isEqualTo",
+          "lineNumber": 55
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "assertThat",
+          "lineNumber": 55
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "this.observationConvention.getContextualName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "supportsOnlyClientHttpObservationContext",
+          "callee": "new ClientRequestObservationContext",
+          "lineNumber": 60
+        },
+        {
+          "caller": "supportsOnlyClientHttpObservationContext",
+          "callee": "assertThat(this.observationConvention.supportsContext(context)).isTrue",
+          "lineNumber": 61
+        },
+        {
+          "caller": "supportsOnlyClientHttpObservationContext",
+          "callee": "assertThat",
+          "lineNumber": 61
+        },
+        {
+          "caller": "supportsOnlyClientHttpObservationContext",
+          "callee": "this.observationConvention.supportsContext",
+          "lineNumber": 61
+        },
+        {
+          "caller": "supportsOnlyClientHttpObservationContext",
+          "callee": "assertThat(this.observationConvention.supportsContext(new Observation.Context())).isFalse",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyClientHttpObservationContext",
+          "callee": "assertThat",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyClientHttpObservationContext",
+          "callee": "this.observationConvention.supportsContext",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyClientHttpObservationContext",
+          "callee": "new Observation.Context",
+          "lineNumber": 62
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "createContext",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "new MockClientHttpRequest",
+          "lineNumber": 68
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "new MockClientHttpResponse",
+          "lineNumber": 68
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "context.setUriTemplate",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "assertThat(this.observationConvention.getLowCardinalityKeyValues(context)).contains",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "assertThat",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "this.observationConvention.getLowCardinalityKeyValues",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "assertThat(this.observationConvention.getHighCardinalityKeyValues(context)).contains",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "assertThat",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "this.observationConvention.getHighCardinalityKeyValues",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "createContext",
+          "lineNumber": 78
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "new MockClientHttpRequest",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "new MockClientHttpResponse",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "context.setUriTemplate",
+          "lineNumber": 80
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "assertThat(this.observationConvention.getLowCardinalityKeyValues(context)).contains",
+          "lineNumber": 81
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "assertThat",
+          "lineNumber": 81
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "this.observationConvention.getLowCardinalityKeyValues",
+          "lineNumber": 81
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "KeyValue.of",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "KeyValue.of",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "KeyValue.of",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "KeyValue.of",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "KeyValue.of",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "KeyValue.of",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "assertThat(this.observationConvention.getHighCardinalityKeyValues(context)).contains",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "assertThat",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "this.observationConvention.getHighCardinalityKeyValues",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithUriTemplateWithHost",
+          "callee": "KeyValue.of",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "createContext",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "new MockClientHttpRequest",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "new MockClientHttpResponse",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "assertThat(this.observationConvention.getLowCardinalityKeyValues(context)).contains",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "assertThat",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "this.observationConvention.getLowCardinalityKeyValues",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "assertThat(this.observationConvention.getHighCardinalityKeyValues(context)).contains",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "assertThat",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "this.observationConvention.getHighCardinalityKeyValues",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addsKeyValuesForRequestWithoutUriTemplate",
+          "callee": "KeyValue.of",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addsClientNameForRequestWithHost",
+          "callee": "createContext",
+          "lineNumber": 99
+        },
+        {
+          "caller": "addsClientNameForRequestWithHost",
+          "callee": "new MockClientHttpRequest",
+          "lineNumber": 100
+        },
+        {
+          "caller": "addsClientNameForRequestWithHost",
+          "callee": "new MockClientHttpResponse",
+          "lineNumber": 101
+        },
+        {
+          "caller": "addsClientNameForRequestWithHost",
+          "callee": "assertThat(this.observationConvention.getLowCardinalityKeyValues(context)).contains",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addsClientNameForRequestWithHost",
+          "callee": "assertThat",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addsClientNameForRequestWithHost",
+          "callee": "this.observationConvention.getLowCardinalityKeyValues",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addsClientNameForRequestWithHost",
+          "callee": "KeyValue.of",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "new ClientRequestObservationContext",
+          "lineNumber": 107
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "mock",
+          "lineNumber": 108
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "context.setResponse",
+          "lineNumber": 109
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "given(response.getStatusCode()).willThrow",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "given",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "response.getStatusCode",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "new IOException",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "assertThat(this.observationConvention.getLowCardinalityKeyValues(context)).contains",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "assertThat",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "this.observationConvention.getLowCardinalityKeyValues",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValueForNonResolvableStatus",
+          "callee": "KeyValue.of",
+          "lineNumber": 111
+        },
+        {
+          "caller": "createContext",
+          "callee": "new ClientRequestObservationContext",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createContext",
+          "callee": "context.setResponse",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/test/java/org/springframework/http/server/observation/DefaultServerRequestObservationConventionTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 102,
+      "functions": [
+        {
+          "name": "shouldHaveDefaultName",
+          "startLine": 43,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "shouldHaveContextualName",
+          "startLine": 48,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "contextualNameShouldUsePathPatternWhenAvailable",
+          "startLine": 53,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "supportsOnlyHttpRequestsObservationContext",
+          "startLine": 59,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForExchange",
+          "startLine": 65,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForExchangeWithPathPattern",
+          "startLine": 77,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForErrorExchange",
+          "startLine": 89,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForRedirectExchange",
+          "startLine": 102,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForNotFoundExchange",
+          "startLine": 115,
+          "endLine": 125,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultServerRequestObservationConventionTests",
+          "startLine": 32,
+          "endLine": 127,
+          "methods": [
+            "shouldHaveDefaultName",
+            "shouldHaveContextualName",
+            "contextualNameShouldUsePathPatternWhenAvailable",
+            "supportsOnlyHttpRequestsObservationContext",
+            "addsKeyValuesForExchange",
+            "addsKeyValuesForExchangeWithPathPattern",
+            "addsKeyValuesForErrorExchange",
+            "addsKeyValuesForRedirectExchange",
+            "addsKeyValuesForNotFoundExchange"
+          ],
+          "properties": [
+            "convention",
+            "request",
+            "response",
+            "context"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldHaveDefaultName",
+          "callee": "assertThat(convention.getName()).isEqualTo",
+          "lineNumber": 45
+        },
+        {
+          "caller": "shouldHaveDefaultName",
+          "callee": "assertThat",
+          "lineNumber": 45
+        },
+        {
+          "caller": "shouldHaveDefaultName",
+          "callee": "convention.getName",
+          "lineNumber": 45
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "assertThat(convention.getContextualName(this.context)).isEqualTo",
+          "lineNumber": 50
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "assertThat",
+          "lineNumber": 50
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "convention.getContextualName",
+          "lineNumber": 50
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "this.context.setPathPattern",
+          "lineNumber": 55
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "assertThat(convention.getContextualName(this.context)).isEqualTo",
+          "lineNumber": 56
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "assertThat",
+          "lineNumber": 56
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "convention.getContextualName",
+          "lineNumber": 56
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "assertThat(this.convention.supportsContext(this.context)).isTrue",
+          "lineNumber": 61
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "assertThat",
+          "lineNumber": 61
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "this.convention.supportsContext",
+          "lineNumber": 61
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "assertThat(this.convention.supportsContext(new Observation.Context())).isFalse",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "assertThat",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "this.convention.supportsContext",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "new Observation.Context",
+          "lineNumber": 62
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "this.request.setMethod",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "this.request.setRequestURI",
+          "lineNumber": 68
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize(5).contains",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize(1).contains",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 74
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "this.request.setRequestURI",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "this.context.setPathPattern",
+          "lineNumber": 80
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize(5).contains",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize(1).contains",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 86
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "this.request.setRequestURI",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "this.context.setError",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "this.response.setStatus",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize(5).contains",
+          "lineNumber": 95
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 95
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat",
+          "lineNumber": 95
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 95
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 96
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 96
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 96
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 97
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 97
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize(1).contains",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 99
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "this.request.setRequestURI",
+          "lineNumber": 104
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "this.response.setStatus",
+          "lineNumber": 105
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "this.response.addHeader",
+          "lineNumber": 106
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize(5).contains",
+          "lineNumber": 108
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 108
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat",
+          "lineNumber": 108
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 108
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 109
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 109
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 109
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize(1).contains",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 112
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "this.request.setRequestURI",
+          "lineNumber": 117
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "this.response.setStatus",
+          "lineNumber": 118
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize(5).contains",
+          "lineNumber": 120
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 120
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat",
+          "lineNumber": 120
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 120
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 121
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 121
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 121
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 122
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 122
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize(1).contains",
+          "lineNumber": 123
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(this.context)).hasSize",
+          "lineNumber": 123
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat",
+          "lineNumber": 123
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 123
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 124
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spring-web/src/test/java/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConventionTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 175,
+      "nonEmptyLines": 146,
+      "functions": [
+        {
+          "name": "shouldHaveDefaultName",
+          "startLine": 39,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "shouldHaveContextualName",
+          "startLine": 44,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "contextualNameShouldUsePathPatternWhenAvailable",
+          "startLine": 51,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "supportsOnlyHttpRequestsObservationContext",
+          "startLine": 59,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForExchange",
+          "startLine": 67,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForExchangeWithPathPattern",
+          "startLine": 80,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForErrorExchange",
+          "startLine": 95,
+          "endLine": 107,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForRedirectExchange",
+          "startLine": 109,
+          "endLine": 121,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForNotFoundExchange",
+          "startLine": 123,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForCancelledExchange",
+          "startLine": 136,
+          "endLine": 148,
+          "params": []
+        },
+        {
+          "name": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "startLine": 150,
+          "endLine": 163,
+          "params": []
+        },
+        {
+          "name": "supportsNullStatusCode",
+          "startLine": 165,
+          "endLine": 173,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultServerRequestObservationConventionTests",
+          "startLine": 34,
+          "endLine": 175,
+          "methods": [
+            "shouldHaveDefaultName",
+            "shouldHaveContextualName",
+            "contextualNameShouldUsePathPatternWhenAvailable",
+            "supportsOnlyHttpRequestsObservationContext",
+            "addsKeyValuesForExchange",
+            "addsKeyValuesForExchangeWithPathPattern",
+            "addsKeyValuesForErrorExchange",
+            "addsKeyValuesForRedirectExchange",
+            "addsKeyValuesForNotFoundExchange",
+            "addsKeyValuesForCancelledExchange",
+            "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+            "supportsNullStatusCode"
+          ],
+          "properties": [
+            "convention"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldHaveDefaultName",
+          "callee": "assertThat(convention.getName()).isEqualTo",
+          "lineNumber": 41
+        },
+        {
+          "caller": "shouldHaveDefaultName",
+          "callee": "assertThat",
+          "lineNumber": 41
+        },
+        {
+          "caller": "shouldHaveDefaultName",
+          "callee": "convention.getName",
+          "lineNumber": 41
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 46
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 46
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "exchange.getRequest",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "exchange.getResponse",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "assertThat(convention.getContextualName(context)).isEqualTo",
+          "lineNumber": 48
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "assertThat",
+          "lineNumber": 48
+        },
+        {
+          "caller": "shouldHaveContextualName",
+          "callee": "convention.getContextualName",
+          "lineNumber": 48
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 53
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 53
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 54
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "exchange.getRequest",
+          "lineNumber": 54
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "exchange.getResponse",
+          "lineNumber": 54
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 54
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "context.setPathPattern",
+          "lineNumber": 55
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "assertThat(convention.getContextualName(context)).isEqualTo",
+          "lineNumber": 56
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "assertThat",
+          "lineNumber": 56
+        },
+        {
+          "caller": "contextualNameShouldUsePathPatternWhenAvailable",
+          "callee": "convention.getContextualName",
+          "lineNumber": 56
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 61
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "MockServerHttpRequest.post",
+          "lineNumber": 61
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "exchange.getRequest",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "exchange.getResponse",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 62
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "assertThat(this.convention.supportsContext(context)).isTrue",
+          "lineNumber": 63
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "assertThat",
+          "lineNumber": 63
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "this.convention.supportsContext",
+          "lineNumber": 63
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "assertThat(this.convention.supportsContext(new Observation.Context())).isFalse",
+          "lineNumber": 64
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "assertThat",
+          "lineNumber": 64
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "this.convention.supportsContext",
+          "lineNumber": 64
+        },
+        {
+          "caller": "supportsOnlyHttpRequestsObservationContext",
+          "callee": "new Observation.Context",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "MockServerHttpRequest.post",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "exchange.getResponse().setRawStatusCode",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "exchange.getRequest",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize(5).contains",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 74
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 74
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 74
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 75
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 75
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize(1).contains",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "assertThat",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addsKeyValuesForExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 77
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "exchange.getResponse().setRawStatusCode",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "exchange.getResponse",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "exchange.getRequest",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "exchange.getResponse",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "context.setPathPattern",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize(5).contains",
+          "lineNumber": 87
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 87
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat",
+          "lineNumber": 87
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 87
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 88
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 88
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 88
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 89
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 89
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize(1).contains",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "assertThat",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addsKeyValuesForExchangeWithPathPattern",
+          "callee": "KeyValue.of",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 97
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "exchange.getRequest",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 98
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "context.setError",
+          "lineNumber": 99
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 99
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "exchange.getResponse().setRawStatusCode",
+          "lineNumber": 100
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 100
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize(5).contains",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 102
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 103
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 103
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 103
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 104
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 104
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize(1).contains",
+          "lineNumber": 105
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 105
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "assertThat",
+          "lineNumber": 105
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 105
+        },
+        {
+          "caller": "addsKeyValuesForErrorExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 106
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 112
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "exchange.getRequest",
+          "lineNumber": 112
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 112
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 112
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "exchange.getResponse().setRawStatusCode",
+          "lineNumber": 113
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 113
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "exchange.getResponse().getHeaders().add",
+          "lineNumber": 114
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "exchange.getResponse().getHeaders",
+          "lineNumber": 114
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 114
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize(5).contains",
+          "lineNumber": 116
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 116
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat",
+          "lineNumber": 116
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 116
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 117
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 117
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 117
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 118
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 118
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize(1).contains",
+          "lineNumber": 119
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 119
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "assertThat",
+          "lineNumber": 119
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 119
+        },
+        {
+          "caller": "addsKeyValuesForRedirectExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 120
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 125
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 125
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 126
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "exchange.getRequest",
+          "lineNumber": 126
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 126
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 126
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "exchange.getResponse().setRawStatusCode",
+          "lineNumber": 127
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 127
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize(5).contains",
+          "lineNumber": 129
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 129
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat",
+          "lineNumber": 129
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 129
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 130
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 130
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 130
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 131
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 131
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize(1).contains",
+          "lineNumber": 132
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 132
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "assertThat",
+          "lineNumber": 132
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 132
+        },
+        {
+          "caller": "addsKeyValuesForNotFoundExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 133
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 138
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 138
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 139
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "exchange.getRequest",
+          "lineNumber": 139
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 139
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 139
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "context.setConnectionAborted",
+          "lineNumber": 140
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "exchange.getResponse().setRawStatusCode",
+          "lineNumber": 141
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "exchange.getResponse",
+          "lineNumber": 141
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize(5).contains",
+          "lineNumber": 143
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 143
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "assertThat",
+          "lineNumber": 143
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 143
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 144
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 144
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 144
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 145
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 145
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize(1).contains",
+          "lineNumber": 146
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 146
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "assertThat",
+          "lineNumber": 146
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 146
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchange",
+          "callee": "KeyValue.of",
+          "lineNumber": 147
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 152
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 152
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 153
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "exchange.getRequest",
+          "lineNumber": 153
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "exchange.getResponse",
+          "lineNumber": 153
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 153
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "context.setConnectionAborted",
+          "lineNumber": 154
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "exchange.getResponse().setRawStatusCode",
+          "lineNumber": 155
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "exchange.getResponse",
+          "lineNumber": 155
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "exchange.getResponse().setComplete().block",
+          "lineNumber": 156
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "exchange.getResponse().setComplete",
+          "lineNumber": 156
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "exchange.getResponse",
+          "lineNumber": 156
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize(5).contains",
+          "lineNumber": 158
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 158
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "assertThat",
+          "lineNumber": 158
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 158
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "KeyValue.of",
+          "lineNumber": 159
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "KeyValue.of",
+          "lineNumber": 159
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "KeyValue.of",
+          "lineNumber": 159
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "KeyValue.of",
+          "lineNumber": 160
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "KeyValue.of",
+          "lineNumber": 160
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize(1).contains",
+          "lineNumber": 161
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "assertThat(this.convention.getHighCardinalityKeyValues(context)).hasSize",
+          "lineNumber": 161
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "assertThat",
+          "lineNumber": 161
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "this.convention.getHighCardinalityKeyValues",
+          "lineNumber": 161
+        },
+        {
+          "caller": "addsKeyValuesForCancelledExchangeWhenResponseCommitted",
+          "callee": "KeyValue.of",
+          "lineNumber": 162
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "MockServerWebExchange.from",
+          "lineNumber": 167
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "MockServerHttpRequest.get",
+          "lineNumber": 167
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "new ServerRequestObservationContext",
+          "lineNumber": 168
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "exchange.getRequest",
+          "lineNumber": 168
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "exchange.getResponse",
+          "lineNumber": 168
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 168
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "assertThat(this.convention.getLowCardinalityKeyValues(context)).contains",
+          "lineNumber": 170
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "assertThat",
+          "lineNumber": 170
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "this.convention.getLowCardinalityKeyValues",
+          "lineNumber": 170
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "KeyValue.of",
+          "lineNumber": 171
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "KeyValue.of",
+          "lineNumber": 172
+        },
+        {
+          "caller": "supportsNullStatusCode",
+          "callee": "KeyValue.of",
+          "lineNumber": 172
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    }
+  ]
+}

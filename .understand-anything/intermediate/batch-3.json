@@ -1,0 +1,532 @@
+{
+  "nodes": [
+    {
+      "id": "file:spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "type": "file",
+      "name": "MicrometerObservationRegistryTestExecutionListener.java",
+      "filePath": "spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "summary": "Test execution listener that manages the Micrometer ObservationRegistry during test execution. It replaces the global ObservationRegistry with a test-specific instance before test methods and restores it afterward.",
+      "tags": [
+        "observation",
+        "testing",
+        "micrometer",
+        "test-listener",
+        "spring-test"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Uses the TestExecutionListener SPI to integrate Micrometer observation with Spring testing."
+    },
+    {
+      "id": "class:MicrometerObservationRegistryTestExecutionListener",
+      "type": "class",
+      "name": "MicrometerObservationRegistryTestExecutionListener",
+      "filePath": "spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "summary": "TestExecutionListener that sets up and tears down Micrometer ObservationRegistry for test methods. It replaces the thread-local accessor with a test-specific registry before each test method and restores the original after test completion.",
+      "tags": [
+        "observation",
+        "testing",
+        "micrometer",
+        "test-listener"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:MicrometerObservationRegistryTestExecutionListener.beforeTestMethod",
+      "type": "function",
+      "name": "beforeTestMethod",
+      "filePath": "spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "lineRange": [
+        125,
+        139
+      ],
+      "summary": "Executes before test method to replace the global ObservationRegistry with a test-specific instance from the application context. Stores the original registry for later restoration.",
+      "tags": [
+        "test-lifecycle",
+        "observation",
+        "registry-setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:MicrometerObservationRegistryTestExecutionListener.afterTestMethod",
+      "type": "function",
+      "name": "afterTestMethod",
+      "filePath": "spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "lineRange": [
+        148,
+        159
+      ],
+      "summary": "Executes after test method to restore the original ObservationRegistry that was present before the test started.",
+      "tags": [
+        "test-lifecycle",
+        "observation",
+        "registry-restoration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test:MicrometerObservationRegistryTestExecutionListenerDependencyTests.java",
+      "type": "file",
+      "name": "MicrometerObservationRegistryTestExecutionListenerDependencyTests.java",
+      "filePath": "spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerDependencyTests.java",
+      "summary": "Tests that verify proper class loading behavior when Micrometer Observation dependencies are present or absent. Uses a custom FilteringClassLoader to test dependency availability scenarios.",
+      "tags": [
+        "test",
+        "observation",
+        "dependencies",
+        "class-loading"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:MicrometerObservationRegistryTestExecutionListenerDependencyTests",
+      "type": "class",
+      "name": "MicrometerObservationRegistryTestExecutionListenerDependencyTests",
+      "filePath": "spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerDependencyTests.java",
+      "summary": "Test class that verifies MicrometerObservationRegistryTestExecutionListener behavior under different dependency availability scenarios including all dependencies present, missing thread local accessor, and missing observation thread local accessor.",
+      "tags": [
+        "test",
+        "observation",
+        "dependencies"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test:MicrometerObservationRegistryTestExecutionListenerTests.java",
+      "type": "file",
+      "name": "MicrometerObservationRegistryTestExecutionListenerTests.java",
+      "filePath": "spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerTests.java",
+      "summary": "Unit tests for MicrometerObservationRegistryTestExecutionListener that verify the correct setup and teardown of ObservationRegistry during test execution. Tests both the default scenario where no registry override occurs and the scenario where a registry bean exists in the application context.",
+      "tags": [
+        "test",
+        "observation",
+        "registry",
+        "mock"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:MicrometerObservationRegistryTestExecutionListenerTests",
+      "type": "class",
+      "name": "MicrometerObservationRegistryTestExecutionListenerTests",
+      "filePath": "spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerTests.java",
+      "summary": "Test class using Mockito mocks to verify that the MicrometerObservationRegistryTestExecutionListener properly replaces and restores the global ObservationRegistry based on the presence of an ObservationRegistry bean in the test ApplicationContext.",
+      "tags": [
+        "test",
+        "observation",
+        "mockito",
+        "registry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:http:client:ClientHttpObservationDocumentation.java",
+      "type": "file",
+      "name": "ClientHttpObservationDocumentation.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/client/observation/ClientHttpObservationDocumentation.java",
+      "summary": "Documentation enum for HTTP client observations. Defines the observation names and key names (both low and high cardinality) used when instrumenting HTTP client requests. Provides metadata about what each key represents.",
+      "tags": [
+        "observation",
+        "http-client",
+        "documentation",
+        "metrics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:http:client:ClientRequestObservationContext.java",
+      "type": "file",
+      "name": "ClientRequestObservationContext.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/client/observation/ClientRequestObservationContext.java",
+      "summary": "Context class holding HTTP client request observation data. Extends the default RequestReplyReceiverContext and provides additional context information like URI template for HTTP client observations.",
+      "tags": [
+        "observation",
+        "http-client",
+        "context",
+        "request"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:ClientRequestObservationContext",
+      "type": "class",
+      "name": "ClientRequestObservationContext",
+      "filePath": "spring-web/src/main/java/org/springframework/http/client/observation/ClientRequestObservationContext.java",
+      "summary": "Observation context for HTTP client requests that extends RequestReplyReceiverContext. Stores the URI template and provides HTTP request-specific context for observation instrumentation.",
+      "tags": [
+        "observation",
+        "http-client",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:http:client:ClientRequestObservationConvention.java",
+      "type": "file",
+      "name": "ClientRequestObservationConvention.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/client/observation/ClientRequestObservationConvention.java",
+      "summary": "Marker interface for HTTP client request observation conventions. Extends ObservationConvention with ClientRequestObservationContext type parameter. Provides a supportsContext method that checks if the context is an instance of ClientRequestObservationContext.",
+      "tags": [
+        "observation",
+        "http-client",
+        "convention",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:http:client:DefaultClientRequestObservationConvention.java",
+      "type": "file",
+      "name": "DefaultClientRequestObservationConvention.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/client/observation/DefaultClientRequestObservationConvention.java",
+      "summary": "Default implementation of ClientRequestObservationConvention. Generates low and high cardinality key values for HTTP client request observations including method, URI, status, exception, client name, outcome, and request URL. Uses a nested HttpOutcome enum to categorize HTTP status outcomes.",
+      "tags": [
+        "observation",
+        "http-client",
+        "convention",
+        "metrics",
+        "default-implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:DefaultClientRequestObservationConvention",
+      "type": "class",
+      "name": "DefaultClientRequestObservationConvention",
+      "filePath": "spring-web/src/main/java/org/springframework/http/client/observation/DefaultClientRequestObservationConvention.java",
+      "summary": "Default implementation that generates key-value pairs for HTTP client observation metrics. Extracts information like HTTP method, URI template, status code, exception type, client host, outcome category, and full request URI from the request context. Contains a nested HttpOutcome enum for status outcome classification.",
+      "tags": [
+        "observation",
+        "http-client",
+        "convention",
+        "key-values"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:http:server:DefaultServerRequestObservationConvention.java",
+      "type": "file",
+      "name": "DefaultServerRequestObservationConvention.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/observation/DefaultServerRequestObservationConvention.java",
+      "summary": "Default implementation of ServerRequestObservationConvention for Servlet-based server HTTP requests. Generates observation key values including method, URI pattern, status, exception, outcome, and request URL. Uses HttpStatus to determine outcome category and handles both pattern-based and path-based URI extraction.",
+      "tags": [
+        "observation",
+        "http-server",
+        "servlet",
+        "convention",
+        "metrics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:DefaultServerRequestObservationConvention",
+      "type": "class",
+      "name": "DefaultServerRequestObservationConvention",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/observation/DefaultServerRequestObservationConvention.java",
+      "summary": "Generates low and high cardinality key-values for Servlet HTTP server request observations. Extracts HTTP method, path pattern, status code, exception simple name, outcome (SUCCESS/UNKNOWN), and full request URI from the ServerRequestObservationContext. Uses HttpStatus.resolve() for status code interpretation.",
+      "tags": [
+        "observation",
+        "http-server",
+        "servlet",
+        "key-values"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:http:server:ServerHttpObservationDocumentation.java",
+      "type": "file",
+      "name": "ServerHttpObservationDocumentation.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/observation/ServerHttpObservationDocumentation.java",
+      "summary": "Documentation enum for Servlet-based HTTP server observations. Defines observation names and key names (low and high cardinality) for HTTP server request instrumentation. Provides metadata descriptions for each key like method, uri, status, exception, outcome, and url.",
+      "tags": [
+        "observation",
+        "http-server",
+        "servlet",
+        "documentation",
+        "metrics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:http:server:ServerRequestObservationContext.java",
+      "type": "file",
+      "name": "ServerRequestObservationContext.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/observation/ServerRequestObservationContext.java",
+      "summary": "Observation context for Servlet HTTP server requests. Extends DefaultRequestReplyContext and stores the path pattern for server request observations. Provides getter and setter for path pattern which is used in generating observation key values.",
+      "tags": [
+        "observation",
+        "http-server",
+        "servlet",
+        "context",
+        "request"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:ServerRequestObservationContext",
+      "type": "class",
+      "name": "ServerRequestObservationContext",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/observation/ServerRequestObservationContext.java",
+      "summary": "Context class holding Servlet HTTP server request observation data. Stores the request and response objects along with the path pattern. Used by observation conventions to generate key-value metrics.",
+      "tags": [
+        "observation",
+        "http-server",
+        "servlet",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:http:server:ServerRequestObservationConvention.java",
+      "type": "file",
+      "name": "ServerRequestObservationConvention.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/observation/ServerRequestObservationConvention.java",
+      "summary": "Marker interface for Servlet HTTP server request observation conventions. Extends ObservationConvention with ServerRequestObservationContext type parameter. Implements supportsContext method to check if context is an instance of ServerRequestObservationContext.",
+      "tags": [
+        "observation",
+        "http-server",
+        "servlet",
+        "convention",
+        "interface"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:http:server:reactive:DefaultServerRequestObservationConvention.java",
+      "type": "file",
+      "name": "DefaultServerRequestObservationConvention.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConvention.java",
+      "summary": "Default implementation of ServerRequestObservationConvention for reactive HTTP server requests. Generates observation key values including method, URI pattern, status, exception, outcome, and request path. Similar to the Servlet version but handles reactive-specific details like connection aborted status and ServerHttpRequest API.",
+      "tags": [
+        "observation",
+        "http-server",
+        "reactive",
+        "webflux",
+        "convention",
+        "metrics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:DefaultServerRequestObservationConvention",
+      "type": "class",
+      "name": "DefaultServerRequestObservationConvention",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConvention.java",
+      "summary": "Generates low and high cardinality key-values for reactive HTTP server request observations. Handles WebFlux-specific details like connection aborted flag and ServerHttpResponse status codes. Uses ServerHttpResponse.getStatusCode() instead of Servlet-specific getStatus() method.",
+      "tags": [
+        "observation",
+        "http-server",
+        "reactive",
+        "webflux",
+        "key-values"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:http:server:reactive:ServerHttpObservationDocumentation.java",
+      "type": "file",
+      "name": "ServerHttpObservationDocumentation.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerHttpObservationDocumentation.java",
+      "summary": "Documentation enum for reactive HTTP server observations. Defines observation names and key names (low and high cardinality) for WebFlux HTTP server request instrumentation. Mirrors the Servlet version structure but is specific to reactive server environments.",
+      "tags": [
+        "observation",
+        "http-server",
+        "reactive",
+        "webflux",
+        "documentation",
+        "metrics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:http:server:reactive:ServerRequestObservationContext.java",
+      "type": "file",
+      "name": "ServerRequestObservationContext.java",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerRequestObservationContext.java",
+      "summary": "Observation context for reactive HTTP server requests. Extends DefaultRequestReplyContext and stores path pattern, connection aborted flag, and request attributes map. Provides getter and setter methods for all context properties used in reactive observation instrumentation.",
+      "tags": [
+        "observation",
+        "http-server",
+        "reactive",
+        "webflux",
+        "context",
+        "request"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:ServerRequestObservationContext",
+      "type": "class",
+      "name": "ServerRequestObservationContext",
+      "filePath": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerRequestObservationContext.java",
+      "summary": "Context class for reactive HTTP server request observations. Holds ServerHttpRequest, ServerHttpResponse, path pattern, connection aborted flag, and request attributes map. More feature-rich than the Servlet equivalent with additional reactive-specific properties.",
+      "tags": [
+        "observation",
+        "http-server",
+        "reactive",
+        "webflux",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:test:DefaultClientRequestObservationConventionTests.java",
+      "type": "file",
+      "name": "DefaultClientRequestObservationConventionTests.java",
+      "filePath": "spring-web/src/test/java/org/springframework/http/client/observation/DefaultClientRequestObservationConventionTests.java",
+      "summary": "Test class verifying the DefaultClientRequestObservationConvention implementation. Tests the key-value generation for HTTP client observations including method, uri, status, exception, outcome, client name, and request url across various HTTP scenarios.",
+      "tags": [
+        "test",
+        "observation",
+        "http-client",
+        "convention"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test:DefaultServerRequestObservationConventionTests.java",
+      "type": "file",
+      "name": "DefaultServerRequestObservationConventionTests.java",
+      "filePath": "spring-web/src/test/java/org/springframework/http/server/observation/DefaultServerRequestObservationConventionTests.java",
+      "summary": "Test class verifying the Servlet-based DefaultServerRequestObservationConvention implementation. Tests key-value generation for HTTP server observations covering method, uri patterns, status codes, exceptions, and outcome classification for Servlet HTTP requests.",
+      "tags": [
+        "test",
+        "observation",
+        "http-server",
+        "servlet",
+        "convention"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:test:DefaultServerRequestObservationConventionTests.java",
+      "type": "file",
+      "name": "DefaultServerRequestObservationConventionTests.java",
+      "filePath": "spring-web/src/test/java/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConventionTests.java",
+      "summary": "Test class verifying the reactive DefaultServerRequestObservationConvention implementation. Tests key-value generation for WebFlux HTTP server observations including connection-aborted scenarios and reactive-specific status handling.",
+      "tags": [
+        "test",
+        "observation",
+        "http-server",
+        "reactive",
+        "webflux",
+        "convention"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:http:client:DefaultClientRequestObservationConvention.java",
+      "target": "file:http:client:ClientRequestObservationConvention.java",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:http:server:DefaultServerRequestObservationConvention.java",
+      "target": "file:http:server:ServerRequestObservationConvention.java",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:http:server:reactive:DefaultServerRequestObservationConvention.java",
+      "target": "file:http:server:reactive:ServerRequestObservationContext.java",
+      "type": "uses",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:test:DefaultClientRequestObservationConventionTests.java",
+      "target": "file:http:client:DefaultClientRequestObservationConvention.java",
+      "type": "tests",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test:DefaultServerRequestObservationConventionTests.java",
+      "target": "file:http:server:DefaultServerRequestObservationConvention.java",
+      "type": "tests",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:test:DefaultServerRequestObservationConventionTests.java",
+      "target": "file:http:server:reactive:DefaultServerRequestObservationConvention.java",
+      "type": "tests",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "target": "file:spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerTests.java",
+      "type": "tested-by",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java",
+      "target": "file:spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerDependencyTests.java",
+      "type": "tested-by",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "http-client",
+      "target": "observation-family",
+      "type": "belongs-to",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "http-server-servlet",
+      "target": "observation-family",
+      "type": "belongs-to",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "http-server-reactive",
+      "target": "observation-family",
+      "type": "belongs-to",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "test-integration",
+      "target": "observation-family",
+      "type": "belongs-to",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "layer:test",
+      "target": "package:org.springframework.test.context.observation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "layer:web",
+      "target": "package:org.springframework.http.client.observation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "layer:web",
+      "target": "package:org.springframework.http.server.observation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "layer:web",
+      "target": "package:org.springframework.http.server.reactive.observation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

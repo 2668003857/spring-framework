@@ -1,0 +1,24 @@
+{
+  "projectRoot": "D:/program/spring-framework",
+  "batchFiles": [
+    {"path": "spring-test/src/main/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListener.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerDependencyTests.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-test/src/test/java/org/springframework/test/context/observation/MicrometerObservationRegistryTestExecutionListenerTests.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/client/observation/ClientHttpObservationDocumentation.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/client/observation/ClientRequestObservationContext.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/client/observation/ClientRequestObservationConvention.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/client/observation/DefaultClientRequestObservationConvention.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/server/observation/DefaultServerRequestObservationConvention.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/server/observation/ServerHttpObservationDocumentation.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/server/observation/ServerRequestObservationContext.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/server/observation/ServerRequestObservationConvention.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConvention.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerHttpObservationDocumentation.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerRequestObservationContext.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/main/java/org/springframework/http/server/reactive/observation/ServerRequestObservationConvention.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/test/java/org/springframework/http/client/observation/DefaultClientRequestObservationConventionTests.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/test/java/org/springframework/http/server/observation/DefaultServerRequestObservationConventionTests.java", "language": "java", "sizeLines": 100, "fileCategory": "code"},
+    {"path": "spring-web/src/test/java/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConventionTests.java", "language": "java", "sizeLines": 100, "fileCategory": "code"}
+  ],
+  "batchImportData": {}
+}

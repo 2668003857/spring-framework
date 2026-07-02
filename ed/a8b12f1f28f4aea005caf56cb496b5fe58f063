@@ -1,0 +1,21 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "eda8b12f1f28f4aea005caf56cb496b5fe58f063",
+  "prompts": {
+    "d2391da5780f9d35": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7db7c882-a615-4af8-9954-960141d1e3e0",
+        "model": "minimax-m2.7"
+      },
+      "human_author": "skye.chang",
+      "messages": [],
+      "total_additions": 479,
+      "total_deletions": 247,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    }
+  }
+}
